@@ -394,8 +394,16 @@ export default function App() {
         </button>
       </nav>
 
-      {/* mobile drawer */}
-      <div className="mDr" style={{display:"none",position:"fixed",top:64,left:0,right:0,zIndex:999,background:"rgba(253,246,227,.98)",borderBottom:"2px solid #F5D78E",flexDirection:"column",padding:"16px 24px",gap:14}}>
+      {/* Mobile overlay - closes menu when tapped outside */}
+      {menuOpen && (
+        <div 
+          onClick={() => setMenuOpen(false)}
+          style={{position:"fixed",inset:0,zIndex:998,background:"rgba(0,0,0,.3)"}} 
+        />
+      )}
+
+      {/* Mobile drawer */}
+      <div style={{display:menuOpen?"flex":"none",position:"fixed",top:64,left:0,right:0,zIndex:999,background:"rgba(253,246,227,.98)",borderBottom:"2px solid #F5D78E",flexDirection:"column",padding:"16px 24px",gap:14}}>
         {navLinks.map(({label,id})=>(
           <button key={id} className="nb" onClick={()=>{scrollTo(id);setMenuOpen(false);}} style={{textAlign:"left",fontFamily:"Lato,sans-serif",fontSize:"1rem",fontWeight:700,color:"#5C3A1E"}}>{label}</button>
         ))}
