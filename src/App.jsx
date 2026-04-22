@@ -394,12 +394,9 @@ export default function App() {
         </button>
       </nav>
 
-      {/* Mobile overlay - closes menu when tapped outside */}
+      {/* Mobile overlay */}
       {menuOpen && (
-        <div 
-          onClick={() => setMenuOpen(false)}
-          style={{position:"fixed",inset:0,zIndex:998,background:"rgba(0,0,0,.3)"}} 
-        />
+        <div onClick={()=>setMenuOpen(false)} style={{position:"fixed",inset:0,zIndex:998,background:"rgba(0,0,0,.3)"}} />
       )}
 
       {/* Mobile drawer */}
@@ -446,7 +443,7 @@ export default function App() {
             {[["Est.","Late 1990s"],["Chapters","6 Cities"],["Core Value","Kayaka"]].map(([l,v])=>(
               <div key={l}>
                 <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:"1.15rem",color:"#F5D78E"}}>{v}</div>
-                <div style={{fontFamily:"Lato,sans-serif",fontSize:".68rem",color:"rgba(245,215,142,.5)",letterSpacing:".1em",textTransform:"uppercase",marginTop:2}}>{l}</div>
+                <div style={{fontFamily:"Lato,sans-serif",fontSize:".68rem",color:"rgba(245,215,142,.85)",letterSpacing:".1em",textTransform:"uppercase",marginTop:2}}>{l}</div>
               </div>
             ))}
           </div>
@@ -464,7 +461,7 @@ export default function App() {
             <div key={t} style={{padding:"26px 20px",borderRight:"1px solid rgba(245,215,142,.1)",textAlign:"center"}}>
               <div style={{fontSize:26,marginBottom:8}}>{i}</div>
               <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".75rem",color:"#F5D78E",marginBottom:6}}>{t}</div>
-              <div style={{fontFamily:"Lato,sans-serif",fontSize:".78rem",color:"rgba(245,215,142,.55)",lineHeight:1.65}}>{s}</div>
+              <div style={{fontFamily:"Lato,sans-serif",fontSize:".78rem",color:"rgba(245,215,142,.85)",lineHeight:1.65}}>{s}</div>
             </div>
           ))}
         </div>
@@ -473,7 +470,7 @@ export default function App() {
       {/* ── ABOUT ── */}
       <section id="about" style={{padding:"88px clamp(16px,5vw,80px)",background:"#FDF6E3"}}>
         <div style={{maxWidth:1100,margin:"0 auto"}}>
-          <SH tag="Who We Are" title="Basava Samithi of Australasia" sub="A Melbourne community rooted in 12th-century Sharana philosophy — living it in 21st-century Australia" />
+          <SH tag="Who We Are" title="Basava Samithi of Australasia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,marginTop:60,alignItems:"center"}} className="g2 rev">
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
               {["community_activity_image-4.jpg","community_activity_image-5.jpg","community_activity_image-6.jpg","community_activity_image-3.jpg"].map(f=>(
@@ -518,7 +515,7 @@ export default function App() {
             <p style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"1.15rem",color:"rgba(245,215,142,.82)",lineHeight:1.9,fontStyle:"italic",marginBottom:20}}>
               "The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold."
             </p>
-            <p style={{fontFamily:"Lato,sans-serif",fontSize:".88rem",color:"rgba(245,215,142,.6)",lineHeight:1.85}}>
+            <p style={{fontFamily:"Lato,sans-serif",fontSize:".88rem",color:"rgba(245,215,142,.82)",lineHeight:1.85}}>
               12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa — the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.
             </p>
           </div>
@@ -539,9 +536,9 @@ export default function App() {
               <div style={{height:1,width:40,background:"#D4A017",opacity:.5}} />
             </div>
             <h2 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(2rem,4.5vw,3.2rem)",color:"#F5D78E",lineHeight:1.15}}>Sharana Philosophy</h2>
-            <p style={{fontFamily:"Lato,sans-serif",fontSize:".9rem",color:"rgba(245,215,142,.5)",marginTop:12,maxWidth:540,margin:"12px auto 0",lineHeight:1.7}}>
+            <p style={{fontFamily:"Lato,sans-serif",fontSize:".9rem",color:"rgba(245,215,142,.75)",marginTop:12,maxWidth:540,margin:"12px auto 0",lineHeight:1.7}}>
               A revolutionary spiritual movement from 12th-century Karnataka — radical, inclusive, and eternally relevant.<br/>
-              <span style={{color:"rgba(245,215,142,.35)",fontSize:".8rem"}}>Hover over each card to explore</span>
+              <span style={{color:"rgba(245,215,142,.55)",fontSize:".8rem"}}>Hover over each card to explore</span>
             </p>
             <div style={{width:56,height:3,background:"linear-gradient(90deg,#E8671A,#D4A017)",margin:"18px auto 0",borderRadius:2}} />
           </div>
@@ -955,7 +952,7 @@ function SH({ tag, title, sub }) {
         <div style={{ height: 1, width: 32, background: "#D4A017", opacity: .5 }} />
       </div>
       <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.8rem,4vw,3rem)", color: "#3B1F0A", lineHeight: 1.2 }}>{title}</h2>
-      {sub && <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "#8B6914", marginTop: 10, lineHeight: 1.7, maxWidth: 560, margin: "10px auto 0" }}>{sub}</p>}
+      {sub && <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", marginTop: 12, lineHeight: 1.75, maxWidth: 620, margin: "12px auto 0" }}>{sub}</p>}
       <div style={{ width: 52, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", margin: "16px auto 0", borderRadius: 2 }} />
     </div>
   );
