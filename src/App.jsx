@@ -381,7 +381,7 @@ export default function App() {
           <img src="hero_section_background.png" alt="logo" style={{width:42,height:42,objectFit:"contain",borderRadius:"50%"}} />
           <div>
             <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".66rem",color:"#E8671A",letterSpacing:".07em"}}>BSOAA Melbourne</div>
-            <div style={{fontFamily:"Lato,sans-serif",fontSize:".56rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australasia</div>
+            <div style={{fontFamily:"Lato,sans-serif",fontSize:".56rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australia</div>
           </div>
         </div>
         <div className="dNav" style={{display:"flex",gap:18,alignItems:"center"}}>
@@ -411,14 +411,14 @@ export default function App() {
         <div style={{position:"absolute",inset:0,overflow:"hidden"}}>
           <img className="kenImg" src="hero_picture.jpg" alt="Hero" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
           <div style={{position:"absolute",inset:0,background:"linear-gradient(115deg,rgba(59,31,10,.92) 0%,rgba(93,58,30,.68) 55%,rgba(184,134,11,.38) 100%)"}} />
-          <div style={{position:"absolute",bottom:0,left:0,right:0,height:220,background:"linear-gradient(to bottom,transparent,#FDF6E3)"}} />
+          <div style={{position:"absolute",bottom:0,left:0,right:0,height:120,background:"linear-gradient(to bottom,transparent,#FDF6E3)"}} />
         </div>
         <div className="sp" style={{position:"absolute",right:"-6%",top:"50%",transform:"translateY(-50%)",opacity:.055,pointerEvents:"none"}}>
           <img src="hero_section_background.png" alt="" style={{width:520,height:520,objectFit:"contain"}} />
         </div>
         <div style={{position:"relative",zIndex:2,padding:"60px clamp(20px,6vw,100px)",maxWidth:820}}>
           <div style={{display:"inline-block",background:"rgba(212,160,23,.18)",border:"1px solid rgba(212,160,23,.45)",borderRadius:20,padding:"5px 18px",marginBottom:22,backdropFilter:"blur(6px)"}}>
-            <span style={{fontFamily:"Lato,sans-serif",fontSize:".7rem",fontWeight:700,letterSpacing:".15em",color:"#F5D78E",textTransform:"uppercase"}}>Basava Samithi of Australasia · Melbourne Chapter · Est. 1990s</span>
+            <span style={{fontFamily:"Lato,sans-serif",fontSize:".7rem",fontWeight:700,letterSpacing:".15em",color:"#F5D78E",textTransform:"uppercase"}}>Basava Samithi of Australia · Melbourne Chapter · Est. 1990s</span>
           </div>
           <h1 style={{fontFamily:"'Cinzel Decorative',serif",fontSize:"clamp(2rem,5.5vw,4rem)",color:"#FDF6E3",lineHeight:1.15,marginBottom:28,textShadow:"0 4px 28px rgba(0,0,0,.55)"}}>
             Spreading<br/><span style={{color:"#F5D78E"}}>Basava Philosophy</span><br/>Across the Globe
@@ -440,10 +440,10 @@ export default function App() {
             <button className="btnOG" onClick={()=>scrollTo("events")}>Upcoming Events</button>
           </div>
           <div style={{display:"flex",gap:"clamp(24px,4vw,56px)",marginTop:52,flexWrap:"wrap"}}>
-            {[["Est.","Late 1990s"],["Chapters","6 Cities"],["Core Value","Kayaka"]].map(([l,v])=>(
-              <div key={l}>
-                <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:"1.15rem",color:"#F5D78E"}}>{v}</div>
-                <div style={{fontFamily:"Lato,sans-serif",fontSize:".68rem",color:"rgba(245,215,142,.85)",letterSpacing:".1em",textTransform:"uppercase",marginTop:2}}>{l}</div>
+            {[["EST.","Late 1990s"],["CHAPTERS","6 Cities"],["CORE VALUE","Kayaka"]].map(([l,v])=>(
+              <div key={l} style={{background:"rgba(0,0,0,.35)",padding:"12px 20px",borderRadius:8,backdropFilter:"blur(6px)",border:"1px solid rgba(245,215,142,.2)"}}>
+                <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:"1.1rem",color:"#F5D78E",fontWeight:700}}>{v}</div>
+                <div style={{fontFamily:"Lato,sans-serif",fontSize:".68rem",color:"rgba(245,215,142,.9)",letterSpacing:".12em",textTransform:"uppercase",marginTop:3}}>{l}</div>
               </div>
             ))}
           </div>
@@ -470,7 +470,7 @@ export default function App() {
       {/* ── ABOUT ── */}
       <section id="about" style={{padding:"88px clamp(16px,5vw,80px)",background:"#FDF6E3"}}>
         <div style={{maxWidth:1100,margin:"0 auto"}}>
-          <SH tag="Who We Are" title="Basava Samithi of Australasia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
+          <SH tag="Who We Are" title="Basava Samithi of Australia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,marginTop:60,alignItems:"center"}} className="g2 rev">
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
               {["community_activity_image-4.jpg","community_activity_image-5.jpg","community_activity_image-6.jpg","community_activity_image-3.jpg"].map(f=>(
@@ -770,7 +770,7 @@ export default function App() {
             </div>
           </div>
           <div style={{borderTop:"1px solid rgba(245,215,142,.08)",paddingTop:22,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:10}}>
-            <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>© 2025 Basava Samithi of Australasia Inc — Melbourne Chapter · Non-Profit Organisation</div>
+            <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>© 2025 Basava Samithi of Australia Inc — Melbourne Chapter · Non-Profit Organisation</div>
             <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>Proudly supported by the Victorian Multicultural Commission</div>
           </div>
         </div>
@@ -952,7 +952,7 @@ function SH({ tag, title, sub }) {
         <div style={{ height: 1, width: 32, background: "#D4A017", opacity: .5 }} />
       </div>
       <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.8rem,4vw,3rem)", color: "#3B1F0A", lineHeight: 1.2 }}>{title}</h2>
-      {sub && <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", marginTop: 12, lineHeight: 1.75, maxWidth: 620, margin: "12px auto 0" }}>{sub}</p>}
+      {sub && <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".95rem", color: "#4A2810", marginTop: 12, lineHeight: 1.8, maxWidth: 680, margin: "12px auto 0", fontWeight:400 }}>{sub}</p>}
       <div style={{ width: 52, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", margin: "16px auto 0", borderRadius: 2 }} />
     </div>
   );
