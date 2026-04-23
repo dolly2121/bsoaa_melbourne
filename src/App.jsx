@@ -377,12 +377,22 @@ export default function App() {
       `}</style>
 
       {/* ── NAV ── */}
-      <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:1000,height:64,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 clamp(16px,4vw,56px)",background:scrolled?"rgba(253,246,227,.97)":"rgba(253,246,227,.82)",backdropFilter:"blur(10px)",borderBottom:`2px solid ${scrolled?"#F5D78E":"rgba(245,215,142,.25)"}`,transition:"all .3s" }}>
-        <div style={{display:"flex",alignItems:"center",gap:10,cursor:"pointer"}} onClick={()=>scrollTo("home")}>
-          <img src="hero_section_background.png" alt="logo" style={{width:42,height:42,objectFit:"contain",borderRadius:"50%"}} />
-          <div>
-            <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".66rem",color:"#E8671A",letterSpacing:".07em"}}>BSOAA Melbourne</div>
-            <div style={{fontFamily:"Lato,sans-serif",fontSize:".56rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australasia</div>
+      <nav style={{ position:"fixed",top:0,left:0,right:0,zIndex:1000,height:72,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 clamp(16px,4vw,56px)",background:scrolled?"rgba(253,246,227,.97)":"rgba(253,246,227,.88)",backdropFilter:"blur(10px)",borderBottom:"none",transition:"all .3s",overflow:"visible" }}>
+        {/* Logo — overflows below navbar into hero */}
+        <div style={{display:"flex",alignItems:"center",gap:14,cursor:"pointer",position:"relative"}} onClick={()=>scrollTo("home")}>
+          <img src="basava_logo.jpg" alt="logo" style={{
+            width:110, height:95,
+            objectFit:"contain",
+            borderRadius:"50% / 50%",
+            border:"none",
+            boxShadow:"0 6px 24px rgba(93,58,30,.4)",
+            position:"relative",
+            top:18,
+            zIndex:1001,
+          }} />
+          <div style={{paddingTop:0}}>
+            <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".82rem",color:"#E8671A",letterSpacing:".07em",lineHeight:1.3}}>BSOAA Melbourne</div>
+            <div style={{fontFamily:"Lato,sans-serif",fontSize:".65rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australasia</div>
           </div>
         </div>
         <div className="dNav" style={{display:"flex",gap:18,alignItems:"center"}}>
@@ -401,14 +411,14 @@ export default function App() {
       )}
 
       {/* Mobile drawer */}
-      <div style={{display:menuOpen?"flex":"none",position:"fixed",top:64,left:0,right:0,zIndex:999,background:"rgba(253,246,227,.98)",borderBottom:"2px solid #F5D78E",flexDirection:"column",padding:"16px 24px",gap:14}}>
+      <div style={{display:menuOpen?"flex":"none",position:"fixed",top:72,left:0,right:0,zIndex:999,background:"rgba(253,246,227,.98)",borderBottom:"2px solid #F5D78E",flexDirection:"column",padding:"16px 24px",gap:14}}>
         {navLinks.map(({label,id})=>(
           <button key={id} className="nb" onClick={()=>{scrollTo(id);setMenuOpen(false);}} style={{textAlign:"left",fontFamily:"Lato,sans-serif",fontSize:"1rem",fontWeight:700,color:"#5C3A1E"}}>{label}</button>
         ))}
       </div>
 
       {/* ── HERO ── */}
-      <section id="home" style={{minHeight:"100vh",position:"relative",overflow:"hidden",display:"flex",alignItems:"center",paddingTop:64}}>
+      <section id="home" style={{minHeight:"100vh",position:"relative",overflow:"hidden",display:"flex",alignItems:"center",paddingTop:72}}>
         <div style={{position:"absolute",inset:0,overflow:"hidden"}}>
           <img className="kenImg" src="hero_picture.jpg" alt="Hero" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
           <div style={{position:"absolute",inset:0,background:"linear-gradient(115deg,rgba(59,31,10,.92) 0%,rgba(93,58,30,.68) 55%,rgba(184,134,11,.38) 100%)"}} />
@@ -458,11 +468,26 @@ export default function App() {
       {/* PILLARS */}
       <div style={{background:"linear-gradient(135deg,#3B1F0A,#6B2D0A)"}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",maxWidth:1100,margin:"0 auto"}} className="g3">
-          {[{i:"🙏",t:"Kayaka",s:"Work is Divine — every honest labour is worship"},{i:"🍽️",t:"Dasoha",s:"Selfless service — give freely of time and wealth"},{i:"☯️",t:"Prasada",s:"Sacred sharing — the fruit of work offered to all"}].map(({i,t,s})=>(
-            <div key={t} style={{padding:"26px 20px",borderRight:"1px solid rgba(245,215,142,.1)",textAlign:"center"}}>
-              <div style={{fontSize:26,marginBottom:8}}>{i}</div>
-              <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".75rem",color:"#F5D78E",marginBottom:6}}>{t}</div>
-              <div style={{fontFamily:"Lato,sans-serif",fontSize:".78rem",color:"rgba(245,215,142,.85)",lineHeight:1.65}}>{s}</div>
+          {[
+            {img:"kayaka_image_hero_section.jpg", t:"Kayaka", s:"Work is Divine — every honest labour is worship"},
+            {img:"dasoha_image_hero_section.jpg", t:"Dasoha", s:"Selfless service — give freely of time and wealth"},
+            {img:"prasada_image_hero_section.jpg", t:"Prasada", s:"Sacred sharing — the fruit of work offered to all"},
+          ].map(({img,t,s})=>(
+            <div key={t} style={{padding:"28px 20px",borderRight:"1px solid rgba(245,215,142,.1)",textAlign:"center",display:"flex",flexDirection:"column",alignItems:"center",gap:12}}>
+              {/* Real image — circular crop */}
+              <div style={{
+                width:72,height:72,borderRadius:"50%",
+                overflow:"hidden",
+                border:"2px solid rgba(212,160,23,.5)",
+                boxShadow:"0 4px 16px rgba(0,0,0,.4)",
+                flexShrink:0,
+              }}>
+                <img src={img} alt={t} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+              </div>
+              <div>
+                <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".75rem",color:"#F5D78E",marginBottom:6,letterSpacing:".08em"}}>{t}</div>
+                <div style={{fontFamily:"Lato,sans-serif",fontSize:".78rem",color:"rgba(245,215,142,.85)",lineHeight:1.65}}>{s}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -777,7 +802,7 @@ export default function App() {
           <div style={{display:"grid",gridTemplateColumns:"2fr 1fr 1fr",gap:36,marginBottom:40}} className="g3">
             <div>
               <div style={{display:"flex",alignItems:"center",gap:10,marginBottom:14}}>
-                <img src="hero_section_background.png" alt="BSOAA" style={{width:38,height:38,objectFit:"contain",borderRadius:"50%"}} />
+                <img src="basava_logo.jpg" alt="BSOAA" style={{width:42,height:42,objectFit:"cover",borderRadius:"50%",border:"2px solid rgba(232,103,26,.3)"}} />
                 <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".7rem",color:"#D4A017",letterSpacing:".07em"}}>BSOAA Melbourne</div>
               </div>
               <p style={{fontFamily:"Lato,sans-serif",fontSize:".8rem",color:"rgba(245,215,142,.5)",lineHeight:1.8,maxWidth:290}}>
