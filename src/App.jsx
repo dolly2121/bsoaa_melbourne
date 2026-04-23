@@ -32,21 +32,23 @@ const events = [
 ];
 
 const galleryImages = [
-  { file: "/bsoaa_melbourne/community_activity_image-1.jpg", caption: "Cultural Program — Award Ceremony" },
-  { file: "/bsoaa_melbourne/community_activity_image-2.jpg", caption: "Award Recognition Ceremony" },
+  { file: "/bsoaa_melbourne/community_activity_image-1.jpg", caption: "Cultural Program — Group Dancing" },
+  { file: "/bsoaa_melbourne/community_activity_image-2.jpg", caption: "Lamp Lighting Ceremony" },
   { file: "/bsoaa_melbourne/community_activity_image-3.jpg", caption: "Community Picnic" },
   { file: "/bsoaa_melbourne/community_activity_image-4.jpg", caption: "Mahamane Gathering" },
   { file: "/bsoaa_melbourne/community_activity_image-5.jpg", caption: "BSOAA Melbourne Team" },
   { file: "/bsoaa_melbourne/community_activity_image-6.jpg", caption: "Monthly Gathering" },
   { file: "/bsoaa_melbourne/community_activity_image-7.jpg", caption: "Cultural Event" },
   { file: "/bsoaa_melbourne/community_activity_image-8.jpg", caption: "Dasoha — Community Cleanup" },
-  { file: "/bsoaa_melbourne/past_evvents.png", caption: "Past Events Highlights" },
+  { file: "/bsoaa_melbourne/community_activity_image-9.jpg", caption: "Deepavali Celebration" },
+  { file: "/bsoaa_melbourne/community_activity_image-10.jpg", caption: "Deepavali Gathering" },
+
 ];
 
 const recognitionImages = [
-  { file: "/bsoaa_melbourne/recognition_image-1.jpg", caption: "Global Recognition Ceremony" },
-  { file: "/bsoaa_melbourne/recognition_image-2.jpg", caption: "Community Honours" },
-  { file: "/bsoaa_melbourne/recognition_image-3.jpg", caption: "Leadership Commitment" },
+  // { file: "/bsoaa_melbourne/recognition_image-1.jpg", caption: "Global Recognition Ceremony" },
+  // { file: "/bsoaa_melbourne/recognition_image-2.jpg", caption: "Community Honours" },
+  // { file: "/bsoaa_melbourne/recognition_image-3.jpg", caption: "Leadership Commitment" },
   { file: "/bsoaa_melbourne/recognition_image-4.jpg", caption: "PM Modi paying tribute to Basavanna" },
 ];
 
@@ -69,19 +71,20 @@ const presidentMessages = [
     year: "President 2025",
     date: "April 14, 2025",
     img: "/bsoaa_melbourne/Praveen_Patil_president_image.jpg",
-    message: "Sharanu, I would like to take this opportunity to thank Basava Samithi of Australasia Melbourne chapter members for electing me as president. It is a great opportunity to serve as Melbourne chapter president and engage in Basava Samithi activities. I am grateful to all members, my family, and friends. Basava Samithi Melbourne chapter was established in 1999 and since then has been serving the community through monthly Sharana Sangama, Mahamane, Australia Day parade, Clean Up Australia Day, Basava Jayanthi and Deepavali celebrations. As president, I will ensure the organisation's objectives and goals are attained, work collaboratively with the Executive Committee, serve community needs honestly, and follow organisation guidelines.",
+    message: "Sharanu, I would like to take this opportunity to thank Basava Samithi of Australasia Inc. Melbourne chapter members for electing me as president. It is a great opportunity to serve as Melbourne chapter president and engage in Basava Samithi activities. I am grateful to all members, my family, and friends. Basava Samithi Melbourne chapter was established in 1999 and since then has been serving the community through monthly Sharana Sangama, Mahamane, Australia Day parade, Clean Up Australia Day, Basava Jayanthi and Deepavali celebrations. As president, I will ensure the organisation's objectives and goals are attained, work collaboratively with the Executive Committee, serve community needs honestly, and follow organisation guidelines.",
   },
   {
     name: "Jaya Hunagund",
     year: "President 2021–2022",
     date: "2021",
     img: "/bsoaa_melbourne/Jaya_Hunagund_president_image.jpg",
-    message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia — Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
+    message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. — Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
   },
 ];
 
 const navLinks = [
   { label: "Home", id: "home" },
+  { label: "About Us", id: "about" },
   { label: "Events", id: "events" },
   { label: "Gallery", id: "gallery" },
   { label: "Recognition", id: "recognition" },
@@ -201,7 +204,7 @@ function SharedFooter({ goTo }) {
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 36, marginBottom: 40 }} className="g3">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <img src="/bsoaa_melbourne/basava_logo.jpg" alt="BSOAA" style={{ width: 42, height: 42, objectFit: "contain" }} />
+              <img src="/bsoaa_melbourne/basava_logo.png" alt="BSOAA" style={{ width: 42, height: 42, objectFit: "contain" }} />
               <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".7rem", color: "#D4A017", letterSpacing: ".07em" }}>BSOAA Melbourne</div>
             </div>
             <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".8rem", color: "rgba(245,215,142,.5)", lineHeight: 1.8, maxWidth: 290 }}>A non-profit community established in the late 1990s, dedicated to spreading Sharana philosophy across Melbourne and Australasia.</p>
@@ -221,7 +224,7 @@ function SharedFooter({ goTo }) {
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(245,215,142,.08)", paddingTop: 22, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
-          <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>© 2025 Basava Samithi of Australasia Inc — Melbourne Chapter · Non-Profit Organisation</div>
+          <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>© 2025 Basava Samithi of Australasia Inc. — Melbourne Chapter · Non-Profit Organisation</div>
           <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>Proudly supported by the Victorian Multicultural Commission</div>
         </div>
       </div>
@@ -249,7 +252,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
         </div>
         <div style={{ position: "relative", zIndex: 2, padding: "60px clamp(20px,6vw,100px)", maxWidth: 820 }}>
           <div style={{ display: "inline-block", background: "rgba(212,160,23,.18)", border: "1px solid rgba(212,160,23,.45)", borderRadius: 20, padding: "5px 18px", marginBottom: 22, backdropFilter: "blur(6px)" }}>
-            <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".7rem", fontWeight: 700, letterSpacing: ".15em", color: "#F5D78E", textTransform: "uppercase" }}>Basava Samithi of Australasia · Melbourne Chapter · Est. 1990s</span>
+            <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".7rem", fontWeight: 700, letterSpacing: ".15em", color: "#F5D78E", textTransform: "uppercase" }}>Basava Samithi of Australasia Inc. Melbourne Chapter · Est. 1990s</span>
           </div>
           <h1 style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "clamp(2rem,5.5vw,4rem)", color: "#FDF6E3", lineHeight: 1.15, marginBottom: 28, textShadow: "0 4px 28px rgba(0,0,0,.55)" }}>
             Spreading<br /><span style={{ color: "#F5D78E" }}>Basava Philosophy</span><br />Across the Globe
@@ -300,7 +303,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       {/* ABOUT */}
       <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#FDF6E3" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <SH tag="Who We Are" title="Basava Samithi of Australasia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
+          <SH tag="Who We Are" title="Basava Samithi of Australasia Inc. Melbourne Chapter" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 36, alignItems: "center" }} className="g2">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {["community_activity_image-4.jpg", "community_activity_image-5.jpg", "community_activity_image-6.jpg", "community_activity_image-3.jpg"].map(f => (
@@ -338,29 +341,6 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
             <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F5D78E", marginBottom: 16, lineHeight: 1.2 }}>Basavanna</h2>
             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.15rem", color: "rgba(245,215,142,.82)", lineHeight: 1.9, fontStyle: "italic", marginBottom: 20 }}>"The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold."</p>
             <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "rgba(245,215,142,.82)", lineHeight: 1.85 }}>12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa — the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* PHILOSOPHY */}
-      <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#1A0F05", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%,rgba(232,103,26,.06) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(212,160,23,.05) 0%,transparent 50%)", pointerEvents: "none" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
-              <div style={{ height: 1, width: 40, background: "#D4A017", opacity: .5 }} />
-              <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".68rem", fontWeight: 700, color: "#8B6914", letterSpacing: ".2em", textTransform: "uppercase" }}>Our Beliefs</div>
-              <div style={{ height: 1, width: 40, background: "#D4A017", opacity: .5 }} />
-            </div>
-            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4.5vw,3.2rem)", color: "#F5D78E", lineHeight: 1.15 }}>Sharana Philosophy</h2>
-            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".9rem", color: "rgba(245,215,142,.75)", marginTop: 12, maxWidth: 540, margin: "12px auto 0", lineHeight: 1.7 }}>
-              A revolutionary spiritual movement from 12th-century Karnataka — radical, inclusive, and eternally relevant.<br />
-              <span style={{ color: "rgba(245,215,142,.45)", fontSize: ".8rem" }}>Hover over each card to explore</span>
-            </p>
-            <div style={{ width: 56, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", margin: "18px auto 0", borderRadius: 2 }} />
-          </div>
-          <div className="philoGrid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22 }}>
-            {philosophyCards.map((card, idx) => <PhiloCardAnimated key={card.title} card={card} index={idx} />)}
           </div>
         </div>
       </section>
@@ -434,37 +414,67 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
 }
 
 function EventsPage({ goTo, setLightbox }) {
+  const [featured, ...rest] = events;
   return (
     <div style={{ paddingTop: 100, background: "#FDF6E3", minHeight: "100vh" }} className="pageIn">
       <div style={{ padding: "48px clamp(16px,5vw,64px)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SH tag="Calendar" title="Events & Gatherings" sub="Come celebrate, serve, and grow with our Melbourne family" />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 26, marginTop: 32 }} className="g2">
-            {events.map(ev => (
-              <div key={ev.title} className="evCard" style={{ background: "#fff", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 24px rgba(93,58,30,.1)" }}>
-                <div className="zoom" style={{ height: 260, overflow: "hidden", position: "relative", cursor: "pointer" }} onClick={() => setLightbox({ file: ev.fullImg, caption: ev.title })}>
+
+          {/* ── FEATURED (BIG) CARD ── */}
+          <div className="evCard" style={{ background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(93,58,30,.15)", marginTop: 36, display: "grid", gridTemplateColumns: "1fr 1fr" }} id="featuredEvCard">
+            {/* Image side */}
+            <div className="zoom" style={{ position: "relative", minHeight: 380, cursor: "pointer", overflow: "hidden" }} onClick={() => setLightbox({ file: featured.fullImg, caption: featured.title })}>
+              <img src={featured.img} alt={featured.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+              {/* Featured badge */}
+              <div style={{ position: "absolute", top: 18, left: 18, background: "linear-gradient(135deg,#E8671A,#C94F0A)", color: "#fff", padding: "5px 14px", borderRadius: 20, fontFamily: "Lato,sans-serif", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", boxShadow: "0 4px 12px rgba(232,103,26,.4)" }}>
+                ⭐ Featured Event
+              </div>
+              <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", display: "flex", alignItems: "center", justifyContent: "center", transition: "background .3s" }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,.3)"}
+                onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}>
+                <div className="viewHint" style={{ background: "rgba(232,103,26,.9)", color: "#fff", padding: "10px 22px", borderRadius: 20, fontFamily: "Lato,sans-serif", fontSize: ".78rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", opacity: 0, transition: "opacity .3s", pointerEvents: "none" }}>View Full Invitation ↗</div>
+              </div>
+            </div>
+            {/* Content side */}
+            <div style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12, flexWrap: "wrap", gap: 8 }}>
+                <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", fontWeight: 700, color: "#E8671A", letterSpacing: ".1em", textTransform: "uppercase" }}>{featured.tag}</span>
+                <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#8B6914", fontStyle: "italic" }}>{featured.date} · {featured.day}</span>
+              </div>
+              <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.6rem,2.8vw,2.2rem)", color: "#3B1F0A", fontWeight: 600, lineHeight: 1.2, marginBottom: 12 }}>{featured.title}</h2>
+              <div style={{ width: 44, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", borderRadius: 2, marginBottom: 18 }} />
+              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".9rem", color: "#8B6914", lineHeight: 1.85, marginBottom: 28, flexGrow: 1 }}>{featured.desc}</p>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                {featured.rsvp && <a href={featured.rsvp} target="_blank" rel="noreferrer"><button className="btnS">RSVP Now</button></a>}
+                <button className="btnO" onClick={() => setLightbox({ file: featured.fullImg, caption: featured.title })}>View Invitation</button>
+              </div>
+            </div>
+          </div>
+          <style>{`@media(max-width:768px){#featuredEvCard{grid-template-columns:1fr!important;}#featuredEvCard>div:first-child{min-height:240px!important;}}`}</style>
+
+          {/* ── 3 SMALLER CARDS IN A ROW ── */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginTop: 20 }} className="g3">
+            {rest.map(ev => (
+              <div key={ev.title} className="evCard" style={{ background: "#fff", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 20px rgba(93,58,30,.1)", display: "flex", flexDirection: "column" }}>
+                {/* Image */}
+                <div className="zoom" style={{ height: 180, overflow: "hidden", position: "relative", cursor: "pointer", flexShrink: 0 }} onClick={() => setLightbox({ file: ev.fullImg, caption: ev.title })}>
                   <img src={ev.img} alt={ev.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
-                  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0)", display: "flex", alignItems: "center", justifyContent: "center", transition: "background .3s" }}
-                    onMouseEnter={e => e.currentTarget.style.background = "rgba(0,0,0,.35)"}
-                    onMouseLeave={e => e.currentTarget.style.background = "rgba(0,0,0,0)"}>
-                    <div className="viewHint" style={{ background: "rgba(232,103,26,.9)", color: "#fff", padding: "8px 18px", borderRadius: 20, fontFamily: "Lato,sans-serif", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", opacity: 0, transition: "opacity .3s", pointerEvents: "none" }}>View Full Invitation ↗</div>
-                  </div>
+                  {/* Gradient overlay with tag */}
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(59,31,10,.75) 0%, transparent 55%)" }} />
+                  <div style={{ position: "absolute", bottom: 12, left: 14, fontFamily: "Lato,sans-serif", fontSize: ".65rem", fontWeight: 700, color: "#F5D78E", letterSpacing: ".08em", textTransform: "uppercase" }}>{ev.tag}</div>
                 </div>
-                <div style={{ padding: "22px 26px" }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8, flexWrap: "wrap", gap: 6 }}>
-                    <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".7rem", fontWeight: 700, color: "#E8671A", letterSpacing: ".1em", textTransform: "uppercase" }}>{ev.tag}</span>
-                    <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: ".95rem", color: "#8B6914", fontStyle: "italic" }}>{ev.date} · {ev.day}</span>
-                  </div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.35rem", color: "#3B1F0A", fontWeight: 600, marginBottom: 8 }}>{ev.title}</h3>
-                  <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".85rem", color: "#8B6914", lineHeight: 1.75, marginBottom: 16 }}>{ev.desc}</p>
-                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-                    {ev.rsvp && <a href={ev.rsvp} target="_blank" rel="noreferrer"><button className="btnS" style={{ fontSize: ".78rem", padding: "9px 20px" }}>RSVP Now</button></a>}
-                    <button className="btnO" style={{ fontSize: ".78rem", padding: "8px 18px" }} onClick={() => setLightbox({ file: ev.fullImg, caption: ev.title })}>View Invitation</button>
-                  </div>
+                {/* Content */}
+                <div style={{ padding: "16px 18px 20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: ".85rem", color: "#8B6914", fontStyle: "italic", marginBottom: 6 }}>{ev.date} · {ev.day}</div>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.1rem", color: "#3B1F0A", fontWeight: 600, lineHeight: 1.3, marginBottom: 8 }}>{ev.title}</h3>
+                  <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".78rem", color: "#8B6914", lineHeight: 1.7, marginBottom: 14, flexGrow: 1 }}>{ev.desc}</p>
+                  <button className="btnO" style={{ fontSize: ".72rem", padding: "7px 14px", alignSelf: "flex-start" }} onClick={() => setLightbox({ file: ev.fullImg, caption: ev.title })}>View Invitation</button>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
       <SharedFooter goTo={goTo} />
@@ -514,7 +524,7 @@ function RecognitionPage({ goTo, setLightbox }) {
         </div>
       </div>
       <footer style={{ background: "#1A0A02", padding: "32px clamp(16px,5vw,80px)" }}>
-        <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)", textAlign: "center" }}>© 2025 Basava Samithi of Australasia Inc — Melbourne Chapter</div>
+        <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)", textAlign: "center" }}>© 2025 Basava Samithi of Australasia Inc. — Melbourne Chapter</div>
       </footer>
     </div>
   );
@@ -530,10 +540,6 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28, marginTop: 32 }} className="g2">
             <div style={{ background: "#fff", borderRadius: 12, padding: "34px 30px", boxShadow: "0 4px 24px rgba(93,58,30,.1)", border: "1px solid #F5D78E" }}>
               <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".62rem", color: "#E8671A", letterSpacing: ".12em", marginBottom: 10 }}>ANNUAL MEMBERSHIP</div>
-              <div style={{ display: "flex", alignItems: "flex-end", gap: 4, marginBottom: 4 }}>
-                <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "3.2rem", color: "#3B1F0A", lineHeight: 1 }}>$50</span>
-                <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".8rem", color: "#8B6914", paddingBottom: 8 }}>/year</span>
-              </div>
               <div style={{ width: 36, height: 2, background: "#E8671A", marginBottom: 22 }} />
               {["All year-round events and activities", "Free cultural program participation", "Monthly Mahamane invitations", "Community newsletters and updates", "Full voting rights in the Samithi"].map(b => (
                 <div key={b} style={{ display: "flex", gap: 10, marginBottom: 11 }}>
@@ -541,7 +547,7 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
                   <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".86rem", color: "#5C3A1E", lineHeight: 1.5 }}>{b}</span>
                 </div>
               ))}
-              <a href="mailto:secretary.bsoamelbourne@gmail.com" style={{ textDecoration: "none" }}>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT0rWQXeEcbkHTDcqKKwN-DPOhyekbDBEZpdn5QUJP2apylQ/viewform" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
                 <button className="btnS" style={{ width: "100%", marginTop: 22 }}>Become a Member</button>
               </a>
             </div>
@@ -551,7 +557,7 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
               <div style={{ width: 36, height: 2, background: "#D4A017", marginBottom: 20 }} />
               <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".86rem", color: "rgba(245,215,142,.72)", lineHeight: 1.85, marginBottom: 22 }}>Dasoha — selfless service — is the beating heart of our philosophy. Volunteer for events, cultural programs, or community service. All backgrounds welcome. Just a willing heart.</p>
               <img src="/bsoaa_melbourne/community_activity_image-8.jpg" alt="Dasoha" style={{ width: "100%", borderRadius: 8, height: 150, objectFit: "cover", display: "block", marginBottom: 22, opacity: .85 }} />
-              <a href="mailto:contact.bsoamelbourne@gmail.com" style={{ textDecoration: "none" }}>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT0rWQXeEcbkHTDcqKKwN-DPOhyekbDBEZpdn5QUJP2apylQ/viewform" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
                 <button className="btnOG" style={{ width: "100%" }}>Get Involved</button>
               </a>
             </div>
@@ -643,6 +649,80 @@ function ContactPage({ goTo }) {
   );
 }
 
+
+function AboutPage({ goTo }) {
+  return (
+    <div style={{ paddingTop: 100, background: "#FDF6E3", minHeight: "100vh" }} className="pageIn">
+
+      {/* ── OUR BELIEFS ── */}
+      <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#1A0F05", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%,rgba(232,103,26,.06) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(212,160,23,.05) 0%,transparent 50%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <SH tag="Our Beliefs" title="Sharana Philosophy" light={true}
+            sub="A revolutionary spiritual movement from 12th-century Karnataka — radical, inclusive, and eternally relevant. Hover over each card to explore." />
+          <div className="philoGrid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22, marginTop: 48 }}>
+            {philosophyCards.map((card, idx) => <PhiloCardAnimated key={card.title} card={card} index={idx} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VISION & MISSION ── */}
+      <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#FDF6E3" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <SH tag="Who We Are" title="Vision & Mission" sub="The purpose and direction that guides the Basava Samithi of Australasia Inc. — Melbourne Chapter." />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40 }} className="g2">
+            {/* Vision */}
+            <div style={{ background: "#fff", borderRadius: 14, padding: "36px 32px", boxShadow: "0 4px 28px rgba(93,58,30,.1)", border: "1px solid #F5D78E", position: "relative", overflow: "hidden" }}>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "linear-gradient(90deg,#E8671A,#D4A017)" }} />
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg,#E8671A,#C94F0A)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem" }}>👁</div>
+                <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".72rem", color: "#E8671A", letterSpacing: ".12em", textTransform: "uppercase" }}>Our Vision</div>
+              </div>
+              <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.5rem,2.5vw,2rem)", color: "#3B1F0A", marginBottom: 16, lineHeight: 1.2 }}>Living the Philosophy</h3>
+              <div style={{ width: 40, height: 2, background: "linear-gradient(90deg,#E8671A,#D4A017)", marginBottom: 20, borderRadius: 2 }} />
+              <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.1rem", color: "#5C3A1E", lineHeight: 1.9, fontStyle: "italic" }}>
+                "Preserve and propagate Sharana Samskruthi (or Sharana Philosophy) as a way of our lives."
+              </p>
+            </div>
+            {/* Mission */}
+            <div style={{ background: "linear-gradient(160deg,#3B1F0A,#6B2D0A)", borderRadius: 14, padding: "36px 32px", position: "relative", overflow: "hidden" }}>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 4, background: "linear-gradient(90deg,#D4A017,#E8671A)" }} />
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg,#D4A017,#B8860B)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem" }}>🌿</div>
+                <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".72rem", color: "#D4A017", letterSpacing: ".12em", textTransform: "uppercase" }}>Our Mission</div>
+              </div>
+              <h3 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.5rem,2.5vw,2rem)", color: "#F5D78E", marginBottom: 16, lineHeight: 1.2 }}>Lead by Example</h3>
+              <div style={{ width: 40, height: 2, background: "linear-gradient(90deg,#D4A017,#E8671A)", marginBottom: 20, borderRadius: 2 }} />
+              <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.1rem", color: "rgba(245,215,142,.88)", lineHeight: 1.9, fontStyle: "italic" }}>
+                "Lead by example by adapting Sharana philosophy that promotes values such as Social Justice, human rights, anti-discrimination and Dasoha (selfless volunteerism) into our daily lives."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EXECUTIVE COMMITTEE ── */}
+      <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#F0E6C8" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <SH tag="Our People" title="Executive Committee" sub="The dedicated members who lead and serve the BSOAA Melbourne Chapter." />
+          <div style={{ marginTop: 40, borderRadius: 16, overflow: "hidden", boxShadow: "0 12px 48px rgba(93,58,30,.18)", border: "3px solid rgba(212,160,23,.3)" }}>
+            <img
+              src="/bsoaa_melbourne/basava_members_image.jpg"
+              alt="BSOAA Melbourne Executive Committee 2021–2022"
+              style={{ width: "100%", display: "block" }}
+            />
+          </div>
+          <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".8rem", color: "#8B6914", textAlign: "center", marginTop: 16, letterSpacing: ".06em" }}>
+            Basava Samithi Melbourne — Executive Committee 2021–2022
+          </p>
+        </div>
+      </section>
+
+      <SharedFooter goTo={goTo} />
+    </div>
+  );
+}
+
 /* ════════════════════════════════════════════
    MAIN APP
 ════════════════════════════════════════════ */
@@ -715,13 +795,13 @@ export default function App() {
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
         height: 88, display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "0 clamp(16px,4vw,56px)",
-        background: scrolled ? "rgba(253,246,227,.97)" : "rgba(253,246,227,.92)",
-        backdropFilter: "blur(10px)",
-        boxShadow: scrolled ? "0 2px 16px rgba(93,58,30,.12)" : "none",
-        transition: "all .3s",
+        background: (page === "home" && !scrolled) ? "transparent" : "rgba(253,246,227,.97)",
+        backdropFilter: (page === "home" && !scrolled) ? "none" : "blur(10px)",
+        boxShadow: (page === "home" && !scrolled) ? "none" : "0 2px 16px rgba(93,58,30,.12)",
+        transition: "all .4s",
         overflow: "visible"
       }}>
-        {/* Logo — large badge overflowing below nav, matching image 2 */}
+        {/* Logo — large badge overflowing below nav */}
         <div style={{ display: "flex", alignItems: "center", gap: 18, cursor: "pointer", position: "relative" }} onClick={() => goTo("home")}>
           <div style={{
             position: "relative",
@@ -732,21 +812,26 @@ export default function App() {
             filter: "drop-shadow(0 6px 20px rgba(93,58,30,.45))",
           }}>
             <img
-              src="/bsoaa_melbourne/basava_logo.jpg"
+              src="/bsoaa_melbourne/basava_logo.png"
               alt="BSOAA Logo"
               style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
             />
           </div>
           <div>
-            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "1rem", color: "#E8671A", letterSpacing: ".07em", lineHeight: 1.3 }}>BSOAA Melbourne</div>
-            <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "#8B6914", letterSpacing: ".12em", textTransform: "uppercase", marginTop: 3 }}>Basava Samithi of Australasia</div>
+            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "1rem",
+              color: (page === "home" && !scrolled) ? "#F5D78E" : "#E8671A",
+              letterSpacing: ".07em", lineHeight: 1.3, transition: "color .4s" }}>BSOAA Melbourne</div>
+            <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem",
+              color: (page === "home" && !scrolled) ? "rgba(245,215,142,.75)" : "#8B6914",
+              letterSpacing: ".12em", textTransform: "uppercase", marginTop: 3, transition: "color .4s" }}>Basava Samithi of Australasia Inc. Melbourne Chapter</div>
           </div>
         </div>
 
         {/* Desktop nav links */}
         <div className="dNav" style={{ display: "flex", gap: 18, alignItems: "center" }}>
           {navLinks.map(({ label, id }) => (
-            <button key={id} className={`nBtn${page === id ? " act" : ""}`} onClick={() => goTo(id)} style={{ color: page === id ? "#E8671A" : "#5C3A1E" }}>{label}</button>
+            <button key={id} className={`nBtn${page === id ? " act" : ""}`} onClick={() => goTo(id)}
+              style={{ color: page === id ? "#E8671A" : (page === "home" && !scrolled) ? "rgba(245,215,142,.9)" : "#5C3A1E" }}>{label}</button>
           ))}
         </div>
 
@@ -778,6 +863,7 @@ export default function App() {
           setPurposeIdx={setPurposeIdx}
         />
       )}
+      {page === "about" && <AboutPage goTo={goTo} />}
       {page === "events" && <EventsPage goTo={goTo} setLightbox={setLightbox} />}
       {page === "gallery" && <GalleryPage goTo={goTo} setLightbox={setLightbox} />}
       {page === "recognition" && <RecognitionPage goTo={goTo} setLightbox={setLightbox} />}
