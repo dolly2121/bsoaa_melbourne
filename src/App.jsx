@@ -134,7 +134,11 @@ const GLOBAL_CSS = `
   @media(min-width:769px){.mBtn{display:none!important;}}
 `;
 
-function scrollToTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
+function scrollToTop() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
 
 /* ════════════════════════════════════════════
    SHARED COMPONENTS — defined outside App
@@ -654,7 +658,7 @@ export default function App() {
   const [purposeIdx, setPurposeIdx] = useState(0);
   const [presidentIdx, setPresidentIdx] = useState(0);
 
-  const goTo = (p) => { setPage(p); setMenuOpen(false); scrollToTop(); };
+  const goTo = (p) => { setPage(p); setMenuOpen(false); };
 
   /* Tagline rotator */
   useEffect(() => {
@@ -691,6 +695,16 @@ export default function App() {
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
+  /* Scroll to top AFTER new page renders — fixes mobile landing at bottom of page */
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [page]);
 
   return (
     <div style={{ fontFamily: "Georgia,serif", background: "#FDF6E3", color: "#2C1A0A", overflowX: "hidden" }}>
