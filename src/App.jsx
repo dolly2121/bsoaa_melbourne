@@ -60,10 +60,10 @@ const philosophyCards = [
 ];
 
 const events = [
-  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration — cultural performances, vachana recitals, community feast. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "past_event-2.jpg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
-  { date: "Nov 2026", day: "TBC", title: "Deepavali Celebration", desc: "Community Deepavali gathering with lamps, music, and shared meals. All backgrounds welcome.", tag: "🪔 Festival", img: "past_event-3.jpg", rsvp: null },
-  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering — vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "past_event-4.jpg", rsvp: null },
-  { date: "Ongoing", day: "Year-round", title: "Dasoha — Community Service", desc: "Volunteer-led service activities in Melbourne — food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "past_event-5.jpg", rsvp: null },
+  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration — cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "basava_jayanthi_2026.jpeg", fullImg: "basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
+  { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "deepavali_event.jpeg", fullImg: "deepavali_event.jpeg", rsvp: null },
+  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering — vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "past_event-4.jpg", fullImg: "past_event-4.jpg", rsvp: null },
+  { date: "Ongoing", day: "Year-round", title: "Dasoha — Community Service", desc: "Volunteer-led service activities in Melbourne — food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "past_event-5.jpg", fullImg: "past_event-5.jpg", rsvp: null },
 ];
 
 const galleryImages = [
@@ -323,6 +323,7 @@ export default function App() {
         .nb{background:none;border:none;cursor:pointer;}
         .evCard{transition:transform .3s,box-shadow .3s;cursor:pointer;}
         .evCard:hover{transform:translateY(-6px);box-shadow:0 20px 52px rgba(93,58,30,.2);}
+        .evCard:hover .viewHint{opacity:1!important;}
         .zoom{overflow:hidden;}
         .zoom img{transition:transform .55s;}
         .zoom:hover img{transform:scale(1.07);}
@@ -597,8 +598,33 @@ export default function App() {
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:26,marginTop:56}} className="g2">
             {events.map(ev=>(
               <div key={ev.title} className="evCard rev" style={{background:"#fff",borderRadius:12,overflow:"hidden",boxShadow:"0 4px 24px rgba(93,58,30,.1)"}}>
-                <div className="zoom" style={{height:210,overflow:"hidden"}}>
-                  <img src={ev.img} alt={ev.title} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}} />
+                {/* Clickable image — opens full invitation poster */}
+                <div className="zoom" style={{height:210,overflow:"hidden",position:"relative",cursor:"pointer"}}
+                  onClick={()=>setLightbox({file:ev.fullImg, caption:ev.title})}>
+                  <img src={ev.img} alt={ev.title} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"top",display:"block"}} />
+                  {/* View full poster overlay hint */}
+                  <div style={{
+                    position:"absolute",inset:0,
+                    background:"rgba(0,0,0,0)",
+                    display:"flex",alignItems:"center",justifyContent:"center",
+                    transition:"background .3s",
+                  }}
+                    onMouseEnter={e=>e.currentTarget.style.background="rgba(0,0,0,.35)"}
+                    onMouseLeave={e=>e.currentTarget.style.background="rgba(0,0,0,0)"}
+                  >
+                    <div style={{
+                      background:"rgba(232,103,26,.9)",color:"#fff",
+                      padding:"8px 18px",borderRadius:20,
+                      fontFamily:"Lato,sans-serif",fontSize:".75rem",fontWeight:700,
+                      letterSpacing:".08em",textTransform:"uppercase",
+                      opacity:0,transition:"opacity .3s",
+                      pointerEvents:"none",
+                    }}
+                      className="viewHint"
+                    >
+                      View Full Invitation ↗
+                    </div>
+                  </div>
                 </div>
                 <div style={{padding:"22px 26px"}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8,flexWrap:"wrap",gap:6}}>
@@ -607,7 +633,10 @@ export default function App() {
                   </div>
                   <h3 style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"1.35rem",color:"#3B1F0A",fontWeight:600,marginBottom:8}}>{ev.title}</h3>
                   <p style={{fontFamily:"Lato,sans-serif",fontSize:".85rem",color:"#8B6914",lineHeight:1.75,marginBottom:16}}>{ev.desc}</p>
-                  {ev.rsvp&&<a href={ev.rsvp} target="_blank" rel="noreferrer"><button className="btnS" style={{fontSize:".78rem",padding:"9px 20px"}}>RSVP Now</button></a>}
+                  <div style={{display:"flex",gap:10,flexWrap:"wrap"}}>
+                    {ev.rsvp&&<a href={ev.rsvp} target="_blank" rel="noreferrer"><button className="btnS" style={{fontSize:".78rem",padding:"9px 20px"}}>RSVP Now</button></a>}
+                    <button className="btnO" style={{fontSize:".78rem",padding:"8px 18px"}} onClick={()=>setLightbox({file:ev.fullImg,caption:ev.title})}>View Invitation</button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -778,11 +807,11 @@ export default function App() {
 
       {/* LIGHTBOX */}
       {lightbox&&(
-        <div onClick={()=>setLightbox(null)} style={{position:"fixed",inset:0,zIndex:3000,background:"rgba(0,0,0,.93)",display:"flex",alignItems:"center",justifyContent:"center",padding:24,cursor:"pointer"}}>
-          <div style={{maxWidth:900,width:"100%",textAlign:"center"}} onClick={e=>e.stopPropagation()}>
-            <img src={lightbox.file} alt={lightbox.caption} style={{width:"100%",borderRadius:8,maxHeight:"80vh",objectFit:"contain",boxShadow:"0 20px 60px rgba(0,0,0,.6)"}} />
+        <div onClick={()=>setLightbox(null)} style={{position:"fixed",inset:0,zIndex:3000,background:"rgba(0,0,0,.95)",display:"flex",alignItems:"center",justifyContent:"center",padding:"20px",cursor:"pointer",overflowY:"auto"}}>
+          <div style={{maxWidth:600,width:"100%",textAlign:"center",margin:"auto"}} onClick={e=>e.stopPropagation()}>
+            <img src={lightbox.file} alt={lightbox.caption} style={{width:"100%",borderRadius:10,display:"block",boxShadow:"0 20px 60px rgba(0,0,0,.7)",maxHeight:"85vh",objectFit:"contain"}} />
             <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"1.1rem",color:"#F5D78E",marginTop:16,fontStyle:"italic"}}>{lightbox.caption}</div>
-            <button onClick={()=>setLightbox(null)} style={{marginTop:14,background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",color:"#F5D78E",padding:"8px 20px",borderRadius:4,cursor:"pointer",fontFamily:"Lato,sans-serif",fontSize:".85rem"}}>Close ✕</button>
+            <button onClick={()=>setLightbox(null)} style={{marginTop:14,background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",color:"#F5D78E",padding:"8px 24px",borderRadius:4,cursor:"pointer",fontFamily:"Lato,sans-serif",fontSize:".85rem"}}>Close ✕</button>
           </div>
         </div>
       )}
