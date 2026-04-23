@@ -381,7 +381,7 @@ export default function App() {
           <img src="hero_section_background.png" alt="logo" style={{width:42,height:42,objectFit:"contain",borderRadius:"50%"}} />
           <div>
             <div style={{fontFamily:"'Cinzel Decorative',serif",fontSize:".66rem",color:"#E8671A",letterSpacing:".07em"}}>BSOAA Melbourne</div>
-            <div style={{fontFamily:"Lato,sans-serif",fontSize:".56rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australia</div>
+            <div style={{fontFamily:"Lato,sans-serif",fontSize:".56rem",color:"#8B6914",letterSpacing:".1em",textTransform:"uppercase"}}>Basava Samithi of Australasia</div>
           </div>
         </div>
         <div className="dNav" style={{display:"flex",gap:18,alignItems:"center"}}>
@@ -418,7 +418,7 @@ export default function App() {
         </div>
         <div style={{position:"relative",zIndex:2,padding:"60px clamp(20px,6vw,100px)",maxWidth:820}}>
           <div style={{display:"inline-block",background:"rgba(212,160,23,.18)",border:"1px solid rgba(212,160,23,.45)",borderRadius:20,padding:"5px 18px",marginBottom:22,backdropFilter:"blur(6px)"}}>
-            <span style={{fontFamily:"Lato,sans-serif",fontSize:".7rem",fontWeight:700,letterSpacing:".15em",color:"#F5D78E",textTransform:"uppercase"}}>Basava Samithi of Australia · Melbourne Chapter · Est. 1990s</span>
+            <span style={{fontFamily:"Lato,sans-serif",fontSize:".7rem",fontWeight:700,letterSpacing:".15em",color:"#F5D78E",textTransform:"uppercase"}}>Basava Samithi of Australasia · Melbourne Chapter · Est. 1990s</span>
           </div>
           <h1 style={{fontFamily:"'Cinzel Decorative',serif",fontSize:"clamp(2rem,5.5vw,4rem)",color:"#FDF6E3",lineHeight:1.15,marginBottom:28,textShadow:"0 4px 28px rgba(0,0,0,.55)"}}>
             Spreading<br/><span style={{color:"#F5D78E"}}>Basava Philosophy</span><br/>Across the Globe
@@ -470,7 +470,7 @@ export default function App() {
       {/* ── ABOUT ── */}
       <section id="about" style={{padding:"88px clamp(16px,5vw,80px)",background:"#FDF6E3"}}>
         <div style={{maxWidth:1100,margin:"0 auto"}}>
-          <SH tag="Who We Are" title="Basava Samithi of Australia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
+          <SH tag="Who We Are" title="Basava Samithi of Australasia" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,marginTop:60,alignItems:"center"}} className="g2 rev">
             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
               {["community_activity_image-4.jpg","community_activity_image-5.jpg","community_activity_image-6.jpg","community_activity_image-3.jpg"].map(f=>(
@@ -770,7 +770,7 @@ export default function App() {
             </div>
           </div>
           <div style={{borderTop:"1px solid rgba(245,215,142,.08)",paddingTop:22,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:10}}>
-            <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>© 2025 Basava Samithi of Australia Inc — Melbourne Chapter · Non-Profit Organisation</div>
+            <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>© 2025 Basava Samithi of Australasia Inc — Melbourne Chapter · Non-Profit Organisation</div>
             <div style={{fontFamily:"Lato,sans-serif",fontSize:".72rem",color:"rgba(245,215,142,.25)"}}>Proudly supported by the Victorian Multicultural Commission</div>
           </div>
         </div>
@@ -794,7 +794,15 @@ export default function App() {
 function PhiloCardAnimated({ card, index }) {
   const [hovered, setHovered] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const ref = useRef(null);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const obs = new IntersectionObserver(([entry]) => {
@@ -806,26 +814,29 @@ function PhiloCardAnimated({ card, index }) {
     return () => obs.disconnect();
   }, [index]);
 
+  // On mobile, always treat as "hovered" so text is always visible
+  const active = isMobile ? true : hovered;
+
   return (
     <div
       ref={ref}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => !isMobile && setHovered(true)}
+      onMouseLeave={() => !isMobile && setHovered(false)}
       style={{
         position: "relative",
         borderRadius: 14,
         overflow: "hidden",
         cursor: "pointer",
-        aspectRatio: "3/4",
+        aspectRatio: isMobile ? "4/3" : "3/4",
         opacity: visible ? 1 : 0,
         transform: visible
-          ? hovered ? "translateY(-12px) scale(1.025)" : "translateY(0) scale(1)"
+          ? hovered && !isMobile ? "translateY(-12px) scale(1.025)" : "translateY(0) scale(1)"
           : "translateY(50px) scale(0.96)",
-        boxShadow: hovered
+        boxShadow: hovered && !isMobile
           ? `0 32px 64px rgba(0,0,0,.55), 0 0 0 2px ${card.accent}`
           : "0 8px 32px rgba(0,0,0,.35)",
         transition: visible
-          ? `opacity .6s ease, transform ${hovered ? ".45s cubic-bezier(.34,1.56,.64,1)" : ".45s ease"}, box-shadow .4s ease`
+          ? `opacity .6s ease, transform ${hovered && !isMobile ? ".45s cubic-bezier(.34,1.56,.64,1)" : ".45s ease"}, box-shadow .4s ease`
           : "opacity .6s ease, transform .6s ease",
       }}
     >
@@ -837,15 +848,15 @@ function PhiloCardAnimated({ card, index }) {
           position: "absolute", inset: 0,
           width: "100%", height: "100%",
           objectFit: "cover", display: "block",
-          transform: hovered ? "scale(1.13)" : "scale(1)",
+          transform: hovered && !isMobile ? "scale(1.13)" : "scale(1)",
           transition: "transform .75s cubic-bezier(.25,.46,.45,.94)",
         }}
       />
 
-      {/* Gradient overlay */}
+      {/* Gradient overlay — always strong on mobile */}
       <div style={{
         position: "absolute", inset: 0,
-        background: hovered
+        background: active
           ? "linear-gradient(to top, rgba(26,8,0,.97) 0%, rgba(26,8,0,.78) 45%, rgba(0,0,0,.2) 100%)"
           : "linear-gradient(to top, rgba(26,8,0,.94) 0%, rgba(26,8,0,.45) 55%, rgba(0,0,0,.08) 100%)",
         transition: "background .45s ease",
@@ -854,34 +865,33 @@ function PhiloCardAnimated({ card, index }) {
       {/* Top accent bar */}
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0,
-        height: hovered ? 5 : 3,
+        height: active ? 5 : 3,
         background: `linear-gradient(90deg, ${card.accent}, #D4A017, ${card.accent})`,
-        backgroundSize: "200% 100%",
-        animation: hovered ? "none" : "none",
         transition: "height .3s ease",
-        boxShadow: hovered ? `0 2px 12px ${card.accent}88` : "none",
+        boxShadow: active ? `0 2px 12px ${card.accent}88` : "none",
       }} />
 
       {/* Content */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "clamp(14px,2.5vw,26px)" }}>
-        {/* Subtitle */}
+
+        {/* Subtitle — always visible on mobile */}
         <div style={{
           fontFamily: "Lato, sans-serif", fontSize: ".65rem", fontWeight: 700,
           letterSpacing: ".14em", textTransform: "uppercase",
           color: "#D4A017", marginBottom: 8,
-          opacity: hovered ? 1 : 0,
-          transform: hovered ? "translateY(0)" : "translateY(10px)",
+          opacity: active ? 1 : 0,
+          transform: active ? "translateY(0)" : "translateY(10px)",
           transition: "all .35s ease .05s",
         }}>
           {card.subtitle}
         </div>
 
-        {/* Title */}
+        {/* Title — always visible */}
         <h3 style={{
           fontFamily: "'Cormorant Garamond', serif",
           fontSize: "clamp(1.1rem,2vw,1.55rem)",
           fontWeight: 600, color: "#F5D78E", lineHeight: 1.2,
-          marginBottom: hovered ? 12 : 8,
+          marginBottom: active ? 12 : 8,
           transition: "margin .35s ease",
         }}>
           {card.title}
@@ -889,56 +899,47 @@ function PhiloCardAnimated({ card, index }) {
 
         {/* Divider */}
         <div style={{
-          width: hovered ? 44 : 20, height: 2,
+          width: active ? 44 : 20, height: 2,
           background: `linear-gradient(90deg, ${card.accent}, #D4A017)`,
-          marginBottom: hovered ? 14 : 0,
+          marginBottom: active ? 14 : 0,
           transition: "all .4s ease", borderRadius: 2,
         }} />
 
-        {/* Body */}
+        {/* Body — always visible on mobile */}
         <div style={{
           overflow: "hidden",
-          maxHeight: hovered ? 160 : 0,
-          opacity: hovered ? 1 : 0,
+          maxHeight: active ? 200 : 0,
+          opacity: active ? 1 : 0,
           transition: "max-height .45s cubic-bezier(.25,.46,.45,.94) .05s, opacity .35s ease .05s",
         }}>
           <p style={{
             fontFamily: "Lato, sans-serif",
             fontSize: "clamp(.76rem,1.1vw,.88rem)",
-            color: "rgba(253,246,227,.8)",
+            color: "rgba(253,246,227,.85)",
             lineHeight: 1.75, paddingTop: 2,
           }}>
             {card.body}
           </p>
-          <div style={{
-            display: "flex", alignItems: "center", gap: 6, marginTop: 14,
-            color: "#D4A017", fontFamily: "Lato, sans-serif",
-            fontSize: ".72rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase",
-            opacity: hovered ? 1 : 0,
-            transform: hovered ? "translateX(0)" : "translateX(-8px)",
-            transition: "all .35s ease .18s",
-          }}>
-            <span>Learn More</span>
-            <span style={{ fontSize: "1rem" }}>→</span>
-          </div>
         </div>
       </div>
 
-      {/* Number badge — hides on hover */}
-      <div style={{
-        position: "absolute", top: 14, right: 14,
-        width: 34, height: 34, borderRadius: "50%",
-        background: "rgba(253,246,227,.1)",
-        border: "1px solid rgba(245,215,142,.25)",
-        backdropFilter: "blur(4px)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        fontFamily: "'Cinzel Decorative', serif", fontSize: ".6rem",
-        color: "rgba(245,215,142,.65)",
-        opacity: hovered ? 0 : 1,
-        transition: "opacity .3s ease",
-      }}>
-        {String(index + 1).padStart(2, "0")}
-      </div>
+      {/* Number badge — hidden on mobile, hides on hover on desktop */}
+      {!isMobile && (
+        <div style={{
+          position: "absolute", top: 14, right: 14,
+          width: 34, height: 34, borderRadius: "50%",
+          background: "rgba(253,246,227,.1)",
+          border: "1px solid rgba(245,215,142,.25)",
+          backdropFilter: "blur(4px)",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          fontFamily: "'Cinzel Decorative', serif", fontSize: ".6rem",
+          color: "rgba(245,215,142,.65)",
+          opacity: hovered ? 0 : 1,
+          transition: "opacity .3s ease",
+        }}>
+          {String(index + 1).padStart(2, "0")}
+        </div>
+      )}
     </div>
   );
 }
