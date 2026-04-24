@@ -133,8 +133,9 @@ const GLOBAL_CSS = `
   .pageIn{animation:fadeUp .35s ease forwards;}
   @media(max-width:900px){.philoGrid{grid-template-columns:repeat(2,1fr)!important;}}
   @media(max-width:600px){.philoGrid{grid-template-columns:1fr!important;}}
-  @media(max-width:768px){.dNav{display:none!important;}.mBtn{display:flex!important;}.g2{grid-template-columns:1fr!important;}.g3{grid-template-columns:1fr!important;}.g4{grid-template-columns:repeat(2,1fr)!important;}.navSub{display:none!important;}}
-  @media(min-width:769px){.mBtn{display:none!important;}}
+  @media(max-width:768px){.dNav{display:none!important;}.mBtn{display:flex!important;}.g2{grid-template-columns:1fr!important;}.g3{grid-template-columns:1fr!important;}.g4{grid-template-columns:repeat(2,1fr)!important;}.navSub{font-size:.55rem!important;letter-spacing:.06em!important;}}
+  @media(min-width:769px){.mBtn{display:none!important;}.logoWrap{top:18px!important;width:112px!important;height:112px!important;}}
+  @media(max-width:768px){.navSub{font-size:.55rem!important;letter-spacing:.06em!important;}}
 `;
 
 function scrollToTop() {
@@ -795,7 +796,7 @@ export default function App() {
       {/* ── NAVBAR ── */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-        height: "clamp(64px,10vw,88px)", display: "flex", alignItems: "center", justifyContent: "space-between",
+        height: 72, display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "0 clamp(16px,4vw,56px)",
         background: (page === "home" && !scrolled) ? "transparent" : "rgba(253,246,227,.97)",
         backdropFilter: (page === "home" && !scrolled) ? "none" : "blur(10px)",
@@ -805,13 +806,13 @@ export default function App() {
       }}>
         {/* Logo - large badge overflowing below nav */}
         <div style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", position: "relative" }} onClick={() => goTo("home")}>
-          <div style={{
+          <div className="logoWrap" style={{
             position: "relative",
-            top: "clamp(0px,2vw,18px)",
-            width: "clamp(56px,8vw,112px)", height: "clamp(56px,8vw,112px)",
+            top: 0,
+            width: 56, height: 56,
             flexShrink: 0,
             zIndex: 1001,
-            filter: "drop-shadow(0 6px 20px rgba(93,58,30,.45))",
+            filter: "drop-shadow(0 4px 12px rgba(93,58,30,.45))",
           }}>
             <img
               src="/bsoaa_melbourne/basava_logo.png"
@@ -847,7 +848,7 @@ export default function App() {
       {menuOpen && <div onClick={() => setMenuOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 998, background: "rgba(0,0,0,.3)" }} />}
 
       {/* Mobile menu panel */}
-      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: "clamp(80px,13vw,106px)", left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
+      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: 72, left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
         {navLinks.map(({ label, id }) => (
           <button key={id} className="nb" onClick={() => goTo(id)} style={{ textAlign: "left", fontFamily: "Lato,sans-serif", fontSize: "1rem", fontWeight: 700, color: "#5C3A1E" }}>{label}</button>
         ))}
