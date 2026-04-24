@@ -27,7 +27,7 @@ const philosophyCards = [
 const events = [
   { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", fullImg: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
   { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/bsoaa_melbourne/deepavali_event.jpeg", fullImg: "/bsoaa_melbourne/deepavali_event.jpeg", rsvp: null },
-  // { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
+  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
   { date: "Ongoing", day: "Year-round", title: "Dasoha - Community Service", desc: "Volunteer-led service activities in Melbourne - food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/bsoaa_melbourne/past_event-5.jpg", fullImg: "/bsoaa_melbourne/past_event-5.jpg", rsvp: null },
 ];
 
@@ -306,12 +306,21 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SH tag="Who We Are" title="Basava Samithi of Australasia Inc. Melbourne Chapter" sub="A Melbourne community rooted in 12th-century Sharana philosophy, living it in 21st-century Australia." />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 36, alignItems: "center" }} className="g2">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-              {["community_activity_image-4.jpg", "community_activity_image-5.jpg", "community_activity_image-6.jpg", "community_activity_image-3.jpg"].map(f => (
-                <div key={f} className="zoom" style={{ borderRadius: 8, overflow: "hidden", aspectRatio: "4/3", boxShadow: "0 6px 24px rgba(93,58,30,.14)" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, position: "relative" }}>
+              {[
+                { f: "/bsoaa_melbourne/community_activity_image-4.jpg", span: false },
+                { f: "/bsoaa_melbourne/community_activity_image-5.jpg", span: false },
+                { f: "/bsoaa_melbourne/community_activity_image-6.jpg", span: false },
+                { f: "/bsoaa_melbourne/community_activity_image-3.jpg", span: false },
+              ].map(({ f }, i) => (
+                <div key={f} className="zoom" style={{ borderRadius: i === 0 ? "12px 4px 4px 4px" : i === 1 ? "4px 12px 4px 4px" : i === 2 ? "4px 4px 4px 12px" : "4px 4px 12px 4px", overflow: "hidden", aspectRatio: "4/3", boxShadow: "0 6px 24px rgba(93,58,30,.14)" }}>
                   <img src={f} alt="Community" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </div>
               ))}
+              {/* Floating badge in centre */}
+              <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 64, height: 64, borderRadius: "50%", background: "linear-gradient(135deg,#E8671A,#C94F0A)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 20px rgba(232,103,26,.5)", zIndex: 2, border: "3px solid #FDF6E3" }}>
+                <span style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".55rem", color: "#fff", letterSpacing: ".06em", textAlign: "center", lineHeight: 1.4 }}>EST.<br/>1990s</span>
+              </div>
             </div>
             <div>
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.2rem", color: "#5C3A1E", lineHeight: 1.85, fontStyle: "italic", marginBottom: 20 }}>"Our inspiration and aspiration - to spread Basava Philosophy around the globe."</p>
@@ -326,25 +335,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
         </div>
       </section>
 
-      {/* BASAVANNA FEATURE */}
-      <section style={{ background: "linear-gradient(160deg,#3B1F0A,#7B3F10)", padding: "56px clamp(16px,5vw,64px)", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", opacity: .055, pointerEvents: "none" }}>
-          <img src="/bsoaa_melbourne/hero_section_background.png" alt="" style={{ width: 460 }} />
-        </div>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "260px 1fr", gap: 56, alignItems: "center" }} className="g2">
-          <div className="bob">
-            <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,.55)", border: "3px solid rgba(212,160,23,.35)" }}>
-              <img src="/bsoaa_melbourne/hero_picture.jpg" alt="Basavanna" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }} />
-            </div>
-          </div>
-          <div style={{ position: "relative", zIndex: 1 }}>
-            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".18em", marginBottom: 14 }}>THE FOUNDER SAINT</div>
-            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F5D78E", marginBottom: 16, lineHeight: 1.2 }}>Basavanna</h2>
-            <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.15rem", color: "rgba(245,215,142,.82)", lineHeight: 1.9, fontStyle: "italic", marginBottom: 20 }}>"The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold."</p>
-            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "rgba(245,215,142,.82)", lineHeight: 1.85 }}>12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa - the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.</p>
-          </div>
-        </div>
-      </section>
+
 
       {/* VACHANAS */}
       <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "linear-gradient(180deg,#3B1F0A,#5C2A08)", position: "relative", overflow: "hidden" }}>
@@ -368,18 +359,24 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
               <button key={i} className="nb" style={{ width: i === vachanaIdx ? 24 : 8, height: 8, borderRadius: 4, background: i === vachanaIdx ? "#D4A017" : "rgba(212,160,23,.22)", transition: "all .3s" }} />
             ))}
           </div>
-          <div style={{ marginTop: 32, display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 180, borderRadius: 10, overflow: "hidden", boxShadow: "0 16px 48px rgba(0,0,0,.5)", border: "2px solid rgba(212,160,23,.3)" }}>
-              <img src="/bsoaa_melbourne/vachana_image.jpg" alt="Vachana Book" style={{ width: "100%", display: "block" }} />
+          {/* Sharana poets - editorial style */}
+          <div style={{ marginTop: 52, borderTop: "1px solid rgba(212,160,23,.15)", paddingTop: 36 }}>
+            <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".6rem", fontWeight: 700, color: "rgba(212,160,23,.45)", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 24 }}>The Sharana Poets</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 0 }} className="g4">
+              {[
+                { name: "Basavanna", title: "Founder Saint", desc: "Statesman, philosopher & social reformer" },
+                { name: "Akka Mahadevi", title: "Mystic Poet", desc: "Voice of feminine divinity & liberation" },
+                { name: "Allama Prabhu", title: "Spiritual Master", desc: "Teacher of inner awakening & wisdom" },
+                { name: "Siddharama", title: "Devotee Saint", desc: "Champion of justice & community service" },
+              ].map(({ name, title, desc }, i) => (
+                <div key={name} style={{ padding: "20px 16px", borderLeft: i > 0 ? "1px solid rgba(212,160,23,.12)" : "none", textAlign: "left" }}>
+                  <div style={{ width: 20, height: 2, background: "linear-gradient(90deg,#E8671A,#D4A017)", borderRadius: 2, marginBottom: 12 }} />
+                  <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.05rem", color: "#F5D78E", fontWeight: 600, marginBottom: 3 }}>{name}</div>
+                  <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".62rem", color: "#D4A017", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 8 }}>{title}</div>
+                  <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".75rem", color: "rgba(245,215,142,.45)", lineHeight: 1.6 }}>{desc}</div>
+                </div>
+              ))}
             </div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14, marginTop: 28 }} className="g4">
-            {["Basavanna", "Akka Mahadevi", "Allama Prabhu", "Siddharama"].map(n => (
-              <div key={n} style={{ padding: "16px 10px", background: "rgba(255,255,255,.05)", borderRadius: 8, border: "1px solid rgba(212,160,23,.18)", textAlign: "center" }}>
-                <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: ".95rem", color: "#F5D78E", fontStyle: "italic", marginBottom: 4 }}>{n}</div>
-                <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".65rem", color: "rgba(245,215,142,.4)", letterSpacing: ".07em" }}>12th Century Sharana</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -388,19 +385,31 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#F0E6C8" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <SH tag="Our Mission" title="Purposes of BSOAA Melbourne" sub="The founding objectives that guide everything we do as a community." />
-          <div style={{ marginTop: 32, position: "relative", overflow: "hidden", background: "#fff", borderRadius: 12, boxShadow: "0 4px 24px rgba(93,58,30,.1)", border: "1px solid #F5D78E" }}>
-            <div key={purposeIdx} style={{ animation: "slideInRight .5s ease forwards", padding: "48px clamp(24px,5vw,64px)", minHeight: 160, display: "flex", alignItems: "center", gap: 24 }}>
-              <div style={{ width: 48, height: 48, borderRadius: "50%", background: "linear-gradient(135deg,#E8671A,#C94F0A)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontFamily: "'Cinzel Decorative',serif", fontSize: ".85rem", color: "#fff" }}>
+          <div style={{ marginTop: 32, position: "relative", background: "#fff", borderRadius: 12, boxShadow: "0 4px 24px rgba(93,58,30,.1)", border: "1px solid #F5D78E", overflow: "hidden" }}>
+            <div key={purposeIdx} style={{ animation: "slideInRight .5s ease forwards", padding: "48px clamp(52px,8vw,96px)", minHeight: 160, display: "flex", alignItems: "center", gap: 24 }}>
+              <div style={{ width: 52, height: 52, borderRadius: "50%", background: "linear-gradient(135deg,#E8671A,#C94F0A)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontFamily: "'Cinzel Decorative',serif", fontSize: ".85rem", color: "#fff" }}>
                 {String(purposeIdx + 1).padStart(2, "0")}
               </div>
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1rem,2vw,1.3rem)", color: "#3B1F0A", lineHeight: 1.85, fontStyle: "italic" }}>
                 {purposes[purposeIdx]}
               </p>
             </div>
-            <div style={{ height: 4, background: "#F0E6C8" }}>
-              <div key={purposeIdx} style={{ height: "100%", background: "linear-gradient(90deg,#E8671A,#D4A017)", animation: "progressBar 8s linear forwards", borderRadius: 2 }} />
-            </div>
-            <div style={{ display: "flex", justifyContent: "center", gap: 8, padding: "14px 0" }}>
+            {/* LEFT ARROW */}
+            <button onClick={() => setPurposeIdx(i => (i - 1 + purposes.length) % purposes.length)}
+              style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 48, background: "linear-gradient(to right,rgba(232,103,26,.12),transparent)", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "background .2s" }}
+              onMouseEnter={e => e.currentTarget.style.background = "linear-gradient(to right,rgba(232,103,26,.25),transparent)"}
+              onMouseLeave={e => e.currentTarget.style.background = "linear-gradient(to right,rgba(232,103,26,.12),transparent)"}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8671A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            {/* RIGHT ARROW */}
+            <button onClick={() => setPurposeIdx(i => (i + 1) % purposes.length)}
+              style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 48, background: "linear-gradient(to left,rgba(232,103,26,.12),transparent)", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "background .2s" }}
+              onMouseEnter={e => e.currentTarget.style.background = "linear-gradient(to left,rgba(232,103,26,.25),transparent)"}
+              onMouseLeave={e => e.currentTarget.style.background = "linear-gradient(to left,rgba(232,103,26,.12),transparent)"}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8671A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            {/* DOTS */}
+            <div style={{ display: "flex", justifyContent: "center", gap: 8, padding: "14px 0", borderTop: "1px solid #F5D78E" }}>
               {purposes.map((_, i) => (
                 <div key={i} onClick={() => setPurposeIdx(i)} style={{ width: i === purposeIdx ? 20 : 7, height: 7, borderRadius: 4, background: i === purposeIdx ? "#E8671A" : "rgba(232,103,26,.2)", transition: "all .3s", cursor: "pointer" }} />
               ))}
@@ -478,6 +487,100 @@ function EventsPage({ goTo, setLightbox }) {
 
         </div>
       </div>
+
+      {/* ── PROPOSED ACTIVITIES ── */}
+      <section style={{ background: "#1A0F05", padding: "56px clamp(16px,5vw,64px)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <SH tag="Basava Sadana" title="Proposed Activities" light={true}
+            sub="A glimpse of what our permanent community home will offer - every day of the week." />
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28, marginTop: 48 }} className="g2">
+
+            {/* WEEKDAYS */}
+            <div style={{ borderRadius: 16, overflow: "hidden", background: "linear-gradient(175deg,#2C1505,#3B1F0A)" }}>
+              {/* Header */}
+              <div style={{ padding: "24px 28px", borderBottom: "1px solid rgba(212,160,23,.15)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                <div>
+                  <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".62rem", fontWeight: 700, color: "#D4A017", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 6 }}>Mon - Fri</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.8rem", color: "#F5D78E", fontWeight: 600, lineHeight: 1 }}>Weekdays</div>
+                </div>
+                <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "3rem", color: "rgba(212,160,23,.08)", lineHeight: 1 }}>W</div>
+              </div>
+              {/* Activity tiles grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(212,160,23,.08)" }}>
+                {[
+                  { label: "Morning Prayers", sub: "Meditation & devotional recitals" },
+                  { label: "Language Classes", sub: "Kannada & Vachana (after school)" },
+                  { label: "Senior Gatherings", sub: "Social & wellness programs" },
+                  { label: "Philosophy Sessions", sub: "Discussions & teaching" },
+                  { label: "Volunteer Work", sub: "Coordination & social service", wide: true },
+                ].map(({ label, sub, wide }) => (
+                  <div key={label} style={{
+                    background: "linear-gradient(160deg,#2C1505,#3B1F0A)",
+                    padding: "18px 20px",
+                    gridColumn: wide ? "span 2" : "span 1",
+                    borderTop: "2px solid transparent",
+                    borderImage: "linear-gradient(90deg,#E8671A,#D4A017) 1",
+                    transition: "background .3s"
+                  }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#F5D78E", fontWeight: 600, marginBottom: 4 }}>{label}</div>
+                    <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.5)", lineHeight: 1.5 }}>{sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* WEEKENDS */}
+            <div style={{ borderRadius: 16, overflow: "hidden", background: "linear-gradient(175deg,#1A0A02,#2C1505)" }}>
+              {/* Header */}
+              <div style={{ padding: "24px 28px", borderBottom: "1px solid rgba(232,103,26,.15)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                <div>
+                  <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".62rem", fontWeight: 700, color: "#E8671A", letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 6 }}>Sat - Sun</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.8rem", color: "#F5D78E", fontWeight: 600, lineHeight: 1 }}>Weekends</div>
+                </div>
+                <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "3rem", color: "rgba(232,103,26,.08)", lineHeight: 1 }}>W</div>
+              </div>
+              {/* Activity tiles grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 1, background: "rgba(232,103,26,.08)" }}>
+                {[
+                  { label: "Spiritual Gatherings", sub: "Satsangs & Sharana Sangama" },
+                  { label: "Anubhava Mantapa", sub: "Basava philosophy sessions" },
+                  { label: "Youth Programs", sub: "Workshops & leadership camps" },
+                  { label: "Dasoha", sub: "Community meals & social service" },
+                  { label: "Arts & Culture", sub: "Music, dance & cultural celebrations", wide: true },
+                ].map(({ label, sub, wide }) => (
+                  <div key={label} style={{
+                    background: "linear-gradient(160deg,#1A0A02,#2C1505)",
+                    padding: "18px 20px",
+                    gridColumn: wide ? "span 2" : "span 1",
+                    borderTop: "2px solid transparent",
+                    borderImage: "linear-gradient(90deg,#D4A017,#E8671A) 1",
+                  }}>
+                    <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#F5D78E", fontWeight: 600, marginBottom: 4 }}>{label}</div>
+                    <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.5)", lineHeight: 1.5 }}>{sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CLOSING QUOTE */}
+          <div style={{ marginTop: 36, borderRadius: 14, padding: "40px clamp(20px,4vw,64px)", textAlign: "center", border: "1px solid rgba(212,160,23,.2)", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg,rgba(232,103,26,.06),rgba(212,160,23,.04))" }} />
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".62rem", color: "#D4A017", letterSpacing: ".2em", marginBottom: 20 }}>KAYAKAVE KAILASA</div>
+              <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.2rem,2.5vw,1.7rem)", color: "#F5D78E", fontStyle: "italic", lineHeight: 1.8, maxWidth: 720, margin: "0 auto 28px" }}>
+                "Work is the path to divinity. Let Basava Sadana be our collective Kayaka for generations to come."
+              </p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT0rWQXeEcbkHTDcqKKwN-DPOhyekbDBEZpdn5QUJP2apylQ/viewform" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
+                <button className="btnS">Get Involved in Basava Sadana</button>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <SharedFooter goTo={goTo} />
     </div>
   );
@@ -697,6 +800,83 @@ function AboutPage({ goTo }) {
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.1rem", color: "rgba(245,215,142,.88)", lineHeight: 1.9, fontStyle: "italic" }}>
                 "Lead by example by adapting Sharana philosophy that promotes values such as Social Justice, human rights, anti-discrimination and Dasoha (selfless volunteerism) into our daily lives."
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BASAVANNA FEATURE ── */}
+      <section style={{ background: "linear-gradient(160deg,#3B1F0A,#7B3F10)", padding: "56px clamp(16px,5vw,64px)", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", opacity: .055, pointerEvents: "none" }}>
+          <img src="/bsoaa_melbourne/hero_section_background.png" alt="" style={{ width: 460 }} />
+        </div>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "260px 1fr", gap: 56, alignItems: "center" }} className="g2">
+          <div className="bob">
+            <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,.55)", border: "3px solid rgba(212,160,23,.35)" }}>
+              <img src="/bsoaa_melbourne/hero_picture.jpg" alt="Basavanna" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }} />
+            </div>
+          </div>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".18em", marginBottom: 14 }}>THE FOUNDER SAINT</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F5D78E", marginBottom: 16, lineHeight: 1.2 }}>Basavanna</h2>
+            <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.15rem", color: "rgba(245,215,142,.82)", lineHeight: 1.9, fontStyle: "italic", marginBottom: 20 }}>"The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold."</p>
+            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "rgba(245,215,142,.82)", lineHeight: 1.85 }}>12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa - the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BASAVA SADANA ── */}
+      <section style={{ background: "linear-gradient(160deg,#3B1F0A,#5C2A08)", padding: "56px clamp(16px,5vw,64px)", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 80% 50%,rgba(212,160,23,.07) 0%,transparent 60%)", pointerEvents: "none" }} />
+        <div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          {/* Header */}
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
+            <div style={{ display: "inline-block", background: "rgba(212,160,23,.15)", border: "1px solid rgba(212,160,23,.4)", borderRadius: 20, padding: "5px 20px", marginBottom: 18 }}>
+              <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".15em", color: "#D4A017", textTransform: "uppercase" }}>A Vision for the Future</span>
+            </div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4.5vw,3.2rem)", color: "#F5D78E", lineHeight: 1.15, marginBottom: 16 }}>Basava Sadana</h2>
+            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".95rem", color: "rgba(245,215,142,.7)", marginBottom: 8 }}>First Basava Bhavana in the Southern Hemisphere</p>
+            <div style={{ width: 56, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", margin: "16px auto 24px", borderRadius: 2 }} />
+            <blockquote style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.1rem,2.2vw,1.5rem)", color: "#F5D78E", fontStyle: "italic", maxWidth: 720, margin: "0 auto", lineHeight: 1.8 }}>
+              "Kayakave Kailasa - Work is the path to divinity. A cultural hub is not just a building - it is a living space for identity, unity and growth."
+            </blockquote>
+          </div>
+          {/* Why We Need It */}
+          <div style={{ marginBottom: 20 }}>
+            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".18em", textAlign: "center", marginBottom: 28 }}>WHY WE NEED BASAVA SADANA</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 18 }} className="g2">
+              {[
+                { num: "01", title: "Contribution to Public Good", body: "Basava Sadana will significantly contribute to the Australian public good - promoting social justice, gender justice, equality and inclusivity." },
+                { num: "02", title: "Strengthening Democracy", body: "Help strengthen democratic values and institutions, which have recently come under pressure in modern society." },
+                { num: "03", title: "First in Southern Hemisphere", body: "Basava Bhavana established in Melbourne will be the first of its kind in the Southern Hemisphere - a proud milestone for our community." },
+                { num: "04", title: "Community Identity & Belonging", body: "A physical address for our community - enabling a permanent, visible presence in multicultural Australia." },
+              ].map(({ num, title, body }) => (
+                <div key={title} style={{ background: "rgba(255,255,255,.05)", border: "1px solid rgba(212,160,23,.2)", borderRadius: 12, padding: "26px 24px" }}>
+                  <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "1.4rem", color: "#E8671A", marginBottom: 12, opacity: .8 }}>{num}</div>
+                  <h4 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.15rem", color: "#F5D78E", fontWeight: 600, marginBottom: 10, lineHeight: 1.3 }}>{title}</h4>
+                  <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".82rem", color: "rgba(245,215,142,.65)", lineHeight: 1.8 }}>{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* What It Stands For */}
+          <div style={{ marginTop: 48 }}>
+            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".18em", textAlign: "center", marginBottom: 28 }}>WHAT BASAVA SADANA STANDS FOR</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }} className="g3">
+              {[
+                { title: "Heritage Preservation", body: "Keeps traditions, language, and Basava philosophy alive for future generations." },
+                { title: "Community Gathering", body: "A place for families, celebrations, discussions and festivals - building belonging." },
+                { title: "Education & Awareness", body: "Classes, workshops and lectures for children and youth on cultural and spiritual values." },
+                { title: "Support Network", body: "Mutual help, mentoring and intergenerational connection - elders and youth together." },
+                { title: "Representation", body: "A visible, proud presence in multicultural Australia promoting inclusivity and dialogue." },
+                { title: "Organisational Sustainability", body: "A permanent hub for regular programs, building long-term pride and commitment." },
+              ].map(({ title, body }) => (
+                <div key={title} style={{ background: "rgba(255,255,255,.04)", border: "1px solid rgba(212,160,23,.15)", borderRadius: 10, padding: "22px 18px" }}>
+                  <div style={{ width: 28, height: 2, background: "linear-gradient(90deg,#E8671A,#D4A017)", borderRadius: 2, marginBottom: 12 }} />
+                  <h4 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#F5D78E", fontWeight: 600, marginBottom: 8, lineHeight: 1.3 }}>{title}</h4>
+                  <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".78rem", color: "rgba(245,215,142,.6)", lineHeight: 1.75 }}>{body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
