@@ -1,0 +1,25 @@
+ITERATION_0 
+followed the referenced website https://bsoaamelbourne.org/ and created the final version 
+
+ITERATION-2 [TAMMANNA'S FEEDBACK]
+1. let's remove the "about", "philosophy", "vachanas" from navigation bar 
+2. add animation to appearing of vachana sentences .  slide from right to left 
+3. upon clicking "events" it's content should open another  web page
+4. upon clicking "gallery" it's content should open another  web page
+5. upon clicking "recognition" it's content should open another  web page
+6. upon clicking "membership" it's content should open another  web page
+7. upon clicking "contact" it's content should open another  web page
+8. add members message in horizontal moving tiles appearing one at a time under the page "membership"
+9. add this at very bottom of home page page like shown in the image attach it is just a example from website of salvation army in calvation army's picture because it's only three so it's not moving if we have more than 3 then please move the tiles horizontalyy with interval of 5 seconds .   Purposes of Basava Samithi Melbourne Chapter
+The purposes of the Association is to (TAKEN FROM referenced website)
+10.make logo neat and clean
+11. replace basava samithi of ausrtalia to "Basava samithi of australasia Inc. melbourne chapter"
+12. create about us page 
+13 remove the membership price and link the join button to a google form
+14. remove irrelevant pictures from gallery
+15. add mission and vison in 'about us' page
+16. add the recent event at the top and past event in small cards at the bottom
+17. remove irrelevant content from recognition page 
+18. add calender
+19. add more stuff from the ppt
+20. add little chatbot
