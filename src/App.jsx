@@ -3,43 +3,43 @@ import { useState, useEffect, useRef } from "react";
 /* ─── DATA ─── */
 const heroTaglines = [
   "One Invisible God · One Universe · Single Humankind",
-  "Work is Divine — Kayaka Vishwakarma Nidhi",
+  "Work is Divine - Kayaka Vishwakarma Nidhi",
   "ISHTALINGA is the Symbol of the Universe",
 ];
 
 const vachanas = [
   { text: "The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold.", author: "Basavanna" },
-  { text: "Work is worship. The fruit of labour is sacred offering. Share freely — this is Dasoha.", author: "Basavanna" },
+  { text: "Work is worship. The fruit of labour is sacred offering. Share freely - this is Dasoha.", author: "Basavanna" },
   { text: "Make of my body the beam of a lute, of my head the sounding gourd, of my nerves the strings.", author: "Akka Mahadevi" },
   { text: "Caste distinctions are a creation of man. In the eyes of the divine, all beings are one and equal.", author: "Allama Prabhu" },
   { text: "The one who has experienced the inner light needs no outer temple. The heart, purified, is the holiest of shrines.", author: "Siddharama" },
 ];
 
 const philosophyCards = [
-  { img: "/bsoaa_melbourne/Iahtalinga_image.png", title: "Ishtalinga", subtitle: "Symbol of the Universe", body: "The personal symbol of the Universe, held close to the heart — a direct, equal connection between every devotee and the divine. No caste. No hierarchy.", accent: "#C94F0A" },
-  { img: "/bsoaa_melbourne/social_equality.jpeg", title: "Social Equality", subtitle: "Unity in Diversity", body: "Basavanna's movement broke caste barriers 800 years before modern civil rights. Every person — regardless of birth — was equal in the Anubhava Mantapa.", accent: "#B8860B" },
-  { img: "/bsoaa_melbourne/vachana_image.jpg", title: "Vachana Literature", subtitle: "Sacred Lyric Poetry", body: "Lyric prose-poems written by the Sharanas — one of the oldest literary forms in Kannada, speaking of justice, love, and inner divinity in plain, accessible language.", accent: "#8B4513" },
+  { img: "/bsoaa_melbourne/Iahtalinga_image.png", title: "Ishtalinga", subtitle: "Symbol of the Universe", body: "The personal symbol of the Universe, held close to the heart - a direct, equal connection between every devotee and the divine. No caste. No hierarchy.", accent: "#C94F0A" },
+  { img: "/bsoaa_melbourne/social_equality.jpeg", title: "Social Equality", subtitle: "Unity in Diversity", body: "Basavanna's movement broke caste barriers 800 years before modern civil rights. Every person - regardless of birth - was equal in the Anubhava Mantapa.", accent: "#B8860B" },
+  { img: "/bsoaa_melbourne/vachana_image.jpg", title: "Vachana Literature", subtitle: "Sacred Lyric Poetry", body: "Lyric prose-poems written by the Sharanas - one of the oldest literary forms in Kannada, speaking of justice, love, and inner divinity in plain, accessible language.", accent: "#8B4513" },
   { img: "/bsoaa_melbourne/anubhava_mantapa.jpg", title: "Anubhava Mantapa", subtitle: "World's First Parliament", body: "The world's first democratic spiritual assembly. Men and women of all backgrounds debated, shared wisdom, and governed together as equals in 12th-century Kalyana.", accent: "#C94F0A" },
-  { img: "/bsoaa_melbourne/dasoha_image.jpg", title: "Dasoha", subtitle: "Selfless Service", body: "Selfless giving — of food, wealth, knowledge, and time. Every act of generosity is considered sacred. Dasoha is the living heartbeat of every BSOAA gathering.", accent: "#B8860B" },
-  { img: "/bsoaa_melbourne/non_descrimination_image.jpg", title: "Non-Discrimination", subtitle: "One Human Family", body: "BSOAA Melbourne carries this legacy forward — welcoming all backgrounds, professions, and genders into a genuinely equal and inclusive community space.", accent: "#8B4513" },
+  { img: "/bsoaa_melbourne/dasoha_image.jpg", title: "Dasoha", subtitle: "Selfless Service", body: "Selfless giving - of food, wealth, knowledge, and time. Every act of generosity is considered sacred. Dasoha is the living heartbeat of every BSOAA gathering.", accent: "#B8860B" },
+  { img: "/bsoaa_melbourne/non_descrimination_image.jpg", title: "Non-Discrimination", subtitle: "One Human Family", body: "BSOAA Melbourne carries this legacy forward - welcoming all backgrounds, professions, and genders into a genuinely equal and inclusive community space.", accent: "#8B4513" },
 ];
 
 const events = [
-  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration — cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", fullImg: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
+  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", fullImg: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
   { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/bsoaa_melbourne/deepavali_event.jpeg", fullImg: "/bsoaa_melbourne/deepavali_event.jpeg", rsvp: null },
-  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering — vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
-  { date: "Ongoing", day: "Year-round", title: "Dasoha — Community Service", desc: "Volunteer-led service activities in Melbourne — food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/bsoaa_melbourne/past_event-5.jpg", fullImg: "/bsoaa_melbourne/past_event-5.jpg", rsvp: null },
+  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
+  { date: "Ongoing", day: "Year-round", title: "Dasoha - Community Service", desc: "Volunteer-led service activities in Melbourne - food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/bsoaa_melbourne/past_event-5.jpg", fullImg: "/bsoaa_melbourne/past_event-5.jpg", rsvp: null },
 ];
 
 const galleryImages = [
-  { file: "/bsoaa_melbourne/community_activity_image-1.jpg", caption: "Cultural Program — Group Dancing" },
+  { file: "/bsoaa_melbourne/community_activity_image-1.jpg", caption: "Cultural Program - Group Dancing" },
   { file: "/bsoaa_melbourne/community_activity_image-2.jpg", caption: "Lamp Lighting Ceremony" },
   { file: "/bsoaa_melbourne/community_activity_image-3.jpg", caption: "Community Picnic" },
   { file: "/bsoaa_melbourne/community_activity_image-4.jpg", caption: "Mahamane Gathering" },
   { file: "/bsoaa_melbourne/community_activity_image-5.jpg", caption: "BSOAA Melbourne Team" },
   { file: "/bsoaa_melbourne/community_activity_image-6.jpg", caption: "Monthly Gathering" },
   { file: "/bsoaa_melbourne/community_activity_image-7.jpg", caption: "Cultural Event" },
-  { file: "/bsoaa_melbourne/community_activity_image-8.jpg", caption: "Dasoha — Community Cleanup" },
+  { file: "/bsoaa_melbourne/community_activity_image-8.jpg", caption: "Dasoha - Community Cleanup" },
   { file: "/bsoaa_melbourne/community_activity_image-9.jpg", caption: "Deepavali Celebration" },
   { file: "/bsoaa_melbourne/community_activity_image-10.jpg", caption: "Deepavali Gathering" },
 
@@ -78,7 +78,7 @@ const presidentMessages = [
     year: "President 2021–2022",
     date: "2021",
     img: "/bsoaa_melbourne/Jaya_Hunagund_president_image.jpg",
-    message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. — Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
+    message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. - Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
   },
 ];
 
@@ -133,7 +133,7 @@ const GLOBAL_CSS = `
   .pageIn{animation:fadeUp .35s ease forwards;}
   @media(max-width:900px){.philoGrid{grid-template-columns:repeat(2,1fr)!important;}}
   @media(max-width:600px){.philoGrid{grid-template-columns:1fr!important;}}
-  @media(max-width:768px){.dNav{display:none!important;}.mBtn{display:flex!important;}.g2{grid-template-columns:1fr!important;}.g3{grid-template-columns:1fr!important;}.g4{grid-template-columns:repeat(2,1fr)!important;}}
+  @media(max-width:768px){.dNav{display:none!important;}.mBtn{display:flex!important;}.g2{grid-template-columns:1fr!important;}.g3{grid-template-columns:1fr!important;}.g4{grid-template-columns:repeat(2,1fr)!important;}.navSub{display:none!important;}}
   @media(min-width:769px){.mBtn{display:none!important;}}
 `;
 
@@ -144,7 +144,7 @@ function scrollToTop() {
 }
 
 /* ════════════════════════════════════════════
-   SHARED COMPONENTS — defined outside App
+   SHARED COMPONENTS - defined outside App
 ════════════════════════════════════════════ */
 
 function SH({ tag, title, sub, light = false }) {
@@ -224,7 +224,7 @@ function SharedFooter({ goTo }) {
           </div>
         </div>
         <div style={{ borderTop: "1px solid rgba(245,215,142,.08)", paddingTop: 22, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10 }}>
-          <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>© 2025 Basava Samithi of Australasia Inc. — Melbourne Chapter · Non-Profit Organisation</div>
+          <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>© 2025 Basava Samithi of Australasia Inc. - Melbourne Chapter · Non-Profit Organisation</div>
           <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)" }}>Proudly supported by the Victorian Multicultural Commission</div>
         </div>
       </div>
@@ -233,7 +233,7 @@ function SharedFooter({ goTo }) {
 }
 
 /* ════════════════════════════════════════════
-   PAGE COMPONENTS — defined outside App so
+   PAGE COMPONENTS - defined outside App so
    React doesn't recreate them on every render
 ════════════════════════════════════════════ */
 
@@ -286,7 +286,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       {/* PILLARS */}
       <div style={{ background: "linear-gradient(135deg,#3B1F0A,#6B2D0A)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", maxWidth: 1100, margin: "0 auto" }} className="g3">
-          {[{ img: "/bsoaa_melbourne/kayaka_image_hero_section.jpg", t: "Kayaka", s: "Work is Divine — every honest labour is worship" }, { img: "/bsoaa_melbourne/dasoha_image_hero_section.jpg", t: "Dasoha", s: "Selfless service — give freely of time and wealth" }, { img: "/bsoaa_melbourne/prasada_image_hero_section.jpg", t: "Prasada", s: "Sacred sharing — the fruit of work offered to all" }].map(({ img, t, s }) => (
+          {[{ img: "/bsoaa_melbourne/kayaka_image_hero_section.jpg", t: "Kayaka", s: "Work is Divine - every honest labour is worship" }, { img: "/bsoaa_melbourne/dasoha_image_hero_section.jpg", t: "Dasoha", s: "Selfless service - give freely of time and wealth" }, { img: "/bsoaa_melbourne/prasada_image_hero_section.jpg", t: "Prasada", s: "Sacred sharing - the fruit of work offered to all" }].map(({ img, t, s }) => (
             <div key={t} style={{ padding: "28px 20px", borderRight: "1px solid rgba(245,215,142,.1)", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
               <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: "2px solid rgba(212,160,23,.5)", boxShadow: "0 4px 16px rgba(0,0,0,.4)", flexShrink: 0 }}>
                 <img src={img} alt={t} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -313,9 +313,9 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
               ))}
             </div>
             <div>
-              <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.2rem", color: "#5C3A1E", lineHeight: 1.85, fontStyle: "italic", marginBottom: 20 }}>"Our inspiration and aspiration — to spread Basava Philosophy around the globe."</p>
-              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", lineHeight: 1.9, marginBottom: 14 }}>Established in the late 1990s, BSOAA Melbourne Chapter is a non-profit organisation that preserves and promotes Sharana philosophy — a revolutionary 12th-century movement championing social equality, human dignity, and divine work.</p>
-              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", lineHeight: 1.9, marginBottom: 28 }}>We are one of six chapters across Australasia — Sydney, Brisbane, Perth, Adelaide, New Zealand, and Singapore — united by Basavanna's teachings and the Anubhava Mantapa tradition.</p>
+              <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.2rem", color: "#5C3A1E", lineHeight: 1.85, fontStyle: "italic", marginBottom: 20 }}>"Our inspiration and aspiration - to spread Basava Philosophy around the globe."</p>
+              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", lineHeight: 1.9, marginBottom: 14 }}>Established in the late 1990s, BSOAA Melbourne Chapter is a non-profit organisation that preserves and promotes Sharana philosophy - a revolutionary 12th-century movement championing social equality, human dignity, and divine work.</p>
+              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".92rem", color: "#5C3A1E", lineHeight: 1.9, marginBottom: 28 }}>We are one of six chapters across Australasia - Sydney, Brisbane, Perth, Adelaide, New Zealand, and Singapore - united by Basavanna's teachings and the Anubhava Mantapa tradition.</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <button className="btnS" onClick={() => goTo("events")}>Our Events</button>
                 <button className="btnO" onClick={() => goTo("membership")}>Join the Samithi</button>
@@ -340,7 +340,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
             <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".18em", marginBottom: 14 }}>THE FOUNDER SAINT</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(2rem,4vw,3rem)", color: "#F5D78E", marginBottom: 16, lineHeight: 1.2 }}>Basavanna</h2>
             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.15rem", color: "rgba(245,215,142,.82)", lineHeight: 1.9, fontStyle: "italic", marginBottom: 20 }}>"The rich will make temples for Shiva. What shall I, a poor man, do? My legs are pillars, the body the shrine, the head a cupola of gold."</p>
-            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "rgba(245,215,142,.82)", lineHeight: 1.85 }}>12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa — the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.</p>
+            <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".88rem", color: "rgba(245,215,142,.82)", lineHeight: 1.85 }}>12th-century statesman, poet, philosopher and social reformer. Founder of the Lingayat movement and the Anubhava Mantapa - the world's first recorded parliament of spiritual equals, held in Kalyana, Karnataka.</p>
           </div>
         </div>
       </section>
@@ -359,7 +359,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
               <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.1rem,2.5vw,1.5rem)", color: "#F5D78E", lineHeight: 1.9, fontStyle: "italic", marginBottom: 24, padding: "0 clamp(0px,4vw,32px)" }}>
                 "{vachanas[vachanaIdx].text}"
               </p>
-              <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".12em" }}>— {vachanas[vachanaIdx].author}</div>
+              <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".68rem", color: "#D4A017", letterSpacing: ".12em" }}>- {vachanas[vachanaIdx].author}</div>
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center", gap: 10, marginTop: 36 }}>
@@ -487,7 +487,7 @@ function GalleryPage({ goTo, setLightbox }) {
     <div style={{ paddingTop: 100, background: "#F0E6C8", minHeight: "100vh" }} className="pageIn">
       <div style={{ padding: "48px clamp(16px,5vw,64px)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SH tag="Our Community" title="Photo Gallery" sub="Celebrations, gatherings, service, and joy — all in one family" />
+          <SH tag="Our Community" title="Photo Gallery" sub="Celebrations, gatherings, service, and joy - all in one family" />
           <div style={{ columns: "clamp(160px,22vw,280px)", columnGap: 14, marginTop: 32 }}>
             {galleryImages.map(({ file, caption }) => (
               <div key={file} className="zoom" style={{ marginBottom: 14, borderRadius: 8, overflow: "hidden", cursor: "pointer", breakInside: "avoid", boxShadow: "0 4px 16px rgba(93,58,30,.12)", transition: "box-shadow .3s" }} onClick={() => setLightbox({ file, caption })}>
@@ -524,7 +524,7 @@ function RecognitionPage({ goTo, setLightbox }) {
         </div>
       </div>
       <footer style={{ background: "#1A0A02", padding: "32px clamp(16px,5vw,80px)" }}>
-        <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)", textAlign: "center" }}>© 2025 Basava Samithi of Australasia Inc. — Melbourne Chapter</div>
+        <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", color: "rgba(245,215,142,.25)", textAlign: "center" }}>© 2025 Basava Samithi of Australasia Inc. - Melbourne Chapter</div>
       </footer>
     </div>
   );
@@ -536,7 +536,7 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
     <div style={{ paddingTop: 100, background: "#FDF6E3", minHeight: "100vh" }} className="pageIn">
       <div style={{ padding: "48px clamp(16px,5vw,64px)" }}>
         <div style={{ maxWidth: 960, margin: "0 auto" }}>
-          <SH tag="Join Us" title="Become a Member" sub="Be part of Melbourne's Sharana community — all are welcome" />
+          <SH tag="Join Us" title="Become a Member" sub="Be part of Melbourne's Sharana community - all are welcome" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28, marginTop: 32 }} className="g2">
             <div style={{ background: "#fff", borderRadius: 12, padding: "34px 30px", boxShadow: "0 4px 24px rgba(93,58,30,.1)", border: "1px solid #F5D78E" }}>
               <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".62rem", color: "#E8671A", letterSpacing: ".12em", marginBottom: 10 }}>ANNUAL MEMBERSHIP</div>
@@ -552,10 +552,10 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
               </a>
             </div>
             <div style={{ background: "linear-gradient(160deg,#3B1F0A,#6B2D0A)", borderRadius: 12, padding: "34px 30px" }}>
-              <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".62rem", color: "#D4A017", letterSpacing: ".12em", marginBottom: 10 }}>DASOHA — SELFLESS SERVICE</div>
+              <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".62rem", color: "#D4A017", letterSpacing: ".12em", marginBottom: 10 }}>DASOHA - SELFLESS SERVICE</div>
               <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.8rem", color: "#F5D78E", fontStyle: "italic", marginBottom: 10, lineHeight: 1.2 }}>Give Your Time</div>
               <div style={{ width: 36, height: 2, background: "#D4A017", marginBottom: 20 }} />
-              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".86rem", color: "rgba(245,215,142,.72)", lineHeight: 1.85, marginBottom: 22 }}>Dasoha — selfless service — is the beating heart of our philosophy. Volunteer for events, cultural programs, or community service. All backgrounds welcome. Just a willing heart.</p>
+              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".86rem", color: "rgba(245,215,142,.72)", lineHeight: 1.85, marginBottom: 22 }}>Dasoha - selfless service - is the beating heart of our philosophy. Volunteer for events, cultural programs, or community service. All backgrounds welcome. Just a willing heart.</p>
               <img src="/bsoaa_melbourne/community_activity_image-8.jpg" alt="Dasoha" style={{ width: "100%", borderRadius: 8, height: 150, objectFit: "cover", display: "block", marginBottom: 22, opacity: .85 }} />
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT0rWQXeEcbkHTDcqKKwN-DPOhyekbDBEZpdn5QUJP2apylQ/viewform" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
                 <button className="btnOG" style={{ width: "100%" }}>Get Involved</button>
@@ -608,7 +608,7 @@ function ContactPage({ goTo }) {
     <div style={{ paddingTop: 100, background: "#F0E6C8", minHeight: "100vh" }} className="pageIn">
       <div style={{ padding: "48px clamp(16px,5vw,64px)" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <SH tag="Get In Touch" title="Contact Us" sub="We would love to hear from you — reach out anytime" />
+          <SH tag="Get In Touch" title="Contact Us" sub="We would love to hear from you - reach out anytime" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 32, alignItems: "start" }} className="g2">
             <div>
               <img src="/bsoaa_melbourne/community_activity_image-5.jpg" alt="Team" style={{ width: "100%", borderRadius: 10, height: 210, objectFit: "cover", display: "block", marginBottom: 28, boxShadow: "0 8px 32px rgba(93,58,30,.14)" }} />
@@ -659,7 +659,7 @@ function AboutPage({ goTo }) {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%,rgba(232,103,26,.06) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(212,160,23,.05) 0%,transparent 50%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <SH tag="Our Beliefs" title="Sharana Philosophy" light={true}
-            sub="A revolutionary spiritual movement from 12th-century Karnataka — radical, inclusive, and eternally relevant. Hover over each card to explore." />
+            sub="A revolutionary spiritual movement from 12th-century Karnataka - radical, inclusive, and eternally relevant. Hover over each card to explore." />
           <div className="philoGrid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 22, marginTop: 48 }}>
             {philosophyCards.map((card, idx) => <PhiloCardAnimated key={card.title} card={card} index={idx} />)}
           </div>
@@ -669,7 +669,7 @@ function AboutPage({ goTo }) {
       {/* ── VISION & MISSION ── */}
       <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "#FDF6E3" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <SH tag="Who We Are" title="Vision & Mission" sub="The purpose and direction that guides the Basava Samithi of Australasia Inc. — Melbourne Chapter." />
+          <SH tag="Who We Are" title="Vision & Mission" sub="The purpose and direction that guides the Basava Samithi of Australasia Inc. - Melbourne Chapter." />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 40 }} className="g2">
             {/* Vision */}
             <div style={{ background: "#fff", borderRadius: 14, padding: "36px 32px", boxShadow: "0 4px 28px rgba(93,58,30,.1)", border: "1px solid #F5D78E", position: "relative", overflow: "hidden" }}>
@@ -713,7 +713,7 @@ function AboutPage({ goTo }) {
             />
           </div>
           <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".8rem", color: "#8B6914", textAlign: "center", marginTop: 16, letterSpacing: ".06em" }}>
-            Basava Samithi Melbourne — Executive Committee 2021–2022
+            Basava Samithi Melbourne - Executive Committee 2021–2022
           </p>
         </div>
       </section>
@@ -776,12 +776,14 @@ export default function App() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  /* Scroll to top AFTER new page renders — fixes mobile landing at bottom of page */
+  /* Scroll to top AFTER new page renders - double RAF ensures iOS Safari paints first */
   useEffect(() => {
     const raf = requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      });
     });
     return () => cancelAnimationFrame(raf);
   }, [page]);
@@ -801,12 +803,12 @@ export default function App() {
         transition: "all .4s",
         overflow: "visible"
       }}>
-        {/* Logo — large badge overflowing below nav */}
-        <div style={{ display: "flex", alignItems: "center", gap: 18, cursor: "pointer", position: "relative" }} onClick={() => goTo("home")}>
+        {/* Logo - large badge overflowing below nav */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", position: "relative" }} onClick={() => goTo("home")}>
           <div style={{
             position: "relative",
             top: 18,
-            width: 112, height: 112,
+            width: "clamp(72px,10vw,112px)", height: "clamp(72px,10vw,112px)",
             flexShrink: 0,
             zIndex: 1001,
             filter: "drop-shadow(0 6px 20px rgba(93,58,30,.45))",
@@ -818,12 +820,12 @@ export default function App() {
             />
           </div>
           <div>
-            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "1rem",
+            <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: "clamp(.72rem,.9rem,1rem)",
               color: (page === "home" && !scrolled) ? "#F5D78E" : "#E8671A",
               letterSpacing: ".07em", lineHeight: 1.3, transition: "color .4s" }}>BSOAA Melbourne</div>
-            <div style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem",
+            <div className="navSub" style={{ fontFamily: "Lato,sans-serif", fontSize: ".65rem",
               color: (page === "home" && !scrolled) ? "rgba(245,215,142,.75)" : "#8B6914",
-              letterSpacing: ".12em", textTransform: "uppercase", marginTop: 3, transition: "color .4s" }}>Basava Samithi of Australasia Inc. Melbourne Chapter</div>
+              letterSpacing: ".1em", textTransform: "uppercase", marginTop: 3, transition: "color .4s" }}>Basava Samithi of Australasia Inc.</div>
           </div>
         </div>
 
@@ -845,7 +847,7 @@ export default function App() {
       {menuOpen && <div onClick={() => setMenuOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 998, background: "rgba(0,0,0,.3)" }} />}
 
       {/* Mobile menu panel */}
-      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: 72, left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
+      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: 106, left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
         {navLinks.map(({ label, id }) => (
           <button key={id} className="nb" onClick={() => goTo(id)} style={{ textAlign: "left", fontFamily: "Lato,sans-serif", fontSize: "1rem", fontWeight: 700, color: "#5C3A1E" }}>{label}</button>
         ))}
