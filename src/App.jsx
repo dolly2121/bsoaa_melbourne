@@ -27,7 +27,7 @@ const philosophyCards = [
 const events = [
   { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", fullImg: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
   { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/bsoaa_melbourne/deepavali_event.jpeg", fullImg: "/bsoaa_melbourne/deepavali_event.jpeg", rsvp: null },
-  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
+  // { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
   { date: "Ongoing", day: "Year-round", title: "Dasoha - Community Service", desc: "Volunteer-led service activities in Melbourne - food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/bsoaa_melbourne/past_event-5.jpg", fullImg: "/bsoaa_melbourne/past_event-5.jpg", rsvp: null },
 ];
 
