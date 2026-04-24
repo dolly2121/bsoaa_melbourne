@@ -825,7 +825,7 @@ export default function App() {
               letterSpacing: ".07em", lineHeight: 1.3, transition: "color .4s" }}>BSOAA Melbourne</div>
             <div className="navSub" style={{ fontFamily: "Lato,sans-serif", fontSize: ".65rem",
               color: (page === "home" && !scrolled) ? "rgba(245,215,142,.75)" : "#8B6914",
-              letterSpacing: ".1em", textTransform: "uppercase", marginTop: 3, transition: "color .4s" }}>Basava Samithi of Australasia Inc.</div>
+              letterSpacing: ".1em", textTransform: "uppercase", marginTop: 3, transition: "color .4s" }}>Basava Samithi of Australasia Inc. Melbourne Chapter</div>
           </div>
         </div>
 
