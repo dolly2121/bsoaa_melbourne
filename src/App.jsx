@@ -795,7 +795,7 @@ export default function App() {
       {/* ── NAVBAR ── */}
       <nav style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
-        height: 88, display: "flex", alignItems: "center", justifyContent: "space-between",
+        height: "clamp(64px,10vw,88px)", display: "flex", alignItems: "center", justifyContent: "space-between",
         padding: "0 clamp(16px,4vw,56px)",
         background: (page === "home" && !scrolled) ? "transparent" : "rgba(253,246,227,.97)",
         backdropFilter: (page === "home" && !scrolled) ? "none" : "blur(10px)",
@@ -807,8 +807,8 @@ export default function App() {
         <div style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", position: "relative" }} onClick={() => goTo("home")}>
           <div style={{
             position: "relative",
-            top: 18,
-            width: "clamp(72px,10vw,112px)", height: "clamp(72px,10vw,112px)",
+            top: "clamp(0px,2vw,18px)",
+            width: "clamp(56px,8vw,112px)", height: "clamp(56px,8vw,112px)",
             flexShrink: 0,
             zIndex: 1001,
             filter: "drop-shadow(0 6px 20px rgba(93,58,30,.45))",
@@ -847,7 +847,7 @@ export default function App() {
       {menuOpen && <div onClick={() => setMenuOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 998, background: "rgba(0,0,0,.3)" }} />}
 
       {/* Mobile menu panel */}
-      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: 106, left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
+      <div style={{ display: menuOpen ? "flex" : "none", position: "fixed", top: "clamp(80px,13vw,106px)", left: 0, right: 0, zIndex: 999, background: "rgba(253,246,227,.98)", borderBottom: "2px solid #F5D78E", flexDirection: "column", padding: "16px 24px", gap: 14 }}>
         {navLinks.map(({ label, id }) => (
           <button key={id} className="nb" onClick={() => goTo(id)} style={{ textAlign: "left", fontFamily: "Lato,sans-serif", fontSize: "1rem", fontWeight: 700, color: "#5C3A1E" }}>{label}</button>
         ))}
