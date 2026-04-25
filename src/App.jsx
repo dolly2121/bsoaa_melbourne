@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
+
 /* ─── DATA ─── */
 const heroTaglines = [
   "One Invisible God · One Universe · Single Humankind",
@@ -68,15 +69,15 @@ const purposes = [
 const presidentMessages = [
   {
     name: "Praveen Patil",
-    year: "President 2025",
-    date: "April 14, 2025",
+    year: "President 2026",
+    // date: "April 14, 2025",
     img: "/bsoaa_melbourne/Praveen_Patil_president_image.jpg",
     message: "Sharanu, I would like to take this opportunity to thank Basava Samithi of Australasia Inc. Melbourne chapter members for electing me as president. It is a great opportunity to serve as Melbourne chapter president and engage in Basava Samithi activities. I am grateful to all members, my family, and friends. Basava Samithi Melbourne chapter was established in 1999 and since then has been serving the community through monthly Sharana Sangama, Mahamane, Australia Day parade, Clean Up Australia Day, Basava Jayanthi and Deepavali celebrations. As president, I will ensure the organisation's objectives and goals are attained, work collaboratively with the Executive Committee, serve community needs honestly, and follow organisation guidelines.",
   },
   {
-    name: "Jaya Hunagund",
-    year: "President 2021–2022",
-    date: "2021",
+    name: "Nagaraj Navalgatti",
+    year: "President 2026",
+    // date: "2021",
     img: "/bsoaa_melbourne/Jaya_Hunagund_president_image.jpg",
     message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. - Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
   },
