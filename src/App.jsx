@@ -17,40 +17,40 @@ const vachanas = [
 ];
 
 const philosophyCards = [
-  { img: "/bsoaa_melbourne/Iahtalinga_image.png", title: "Ishtalinga", subtitle: "Symbol of the Universe", body: "The personal symbol of the Universe, held close to the heart - a direct, equal connection between every devotee and the divine. No caste. No hierarchy.", accent: "#C94F0A" },
-  { img: "/bsoaa_melbourne/social_equality.jpeg", title: "Social Equality", subtitle: "Unity in Diversity", body: "Basavanna's movement broke caste barriers 800 years before modern civil rights. Every person - regardless of birth - was equal in the Anubhava Mantapa.", accent: "#B8860B" },
-  { img: "/bsoaa_melbourne/vachana_image.jpg", title: "Vachana Literature", subtitle: "Sacred Lyric Poetry", body: "Lyric prose-poems written by the Sharanas - one of the oldest literary forms in Kannada, speaking of justice, love, and inner divinity in plain, accessible language.", accent: "#8B4513" },
-  { img: "/bsoaa_melbourne/anubhava_mantapa.jpg", title: "Anubhava Mantapa", subtitle: "World's First Parliament", body: "The world's first democratic spiritual assembly. Men and women of all backgrounds debated, shared wisdom, and governed together as equals in 12th-century Kalyana.", accent: "#C94F0A" },
-  { img: "/bsoaa_melbourne/dasoha_image.jpg", title: "Dasoha", subtitle: "Selfless Service", body: "Selfless giving - of food, wealth, knowledge, and time. Every act of generosity is considered sacred. Dasoha is the living heartbeat of every BSOAA gathering.", accent: "#B8860B" },
-  { img: "/bsoaa_melbourne/non_descrimination_image.jpg", title: "Non-Discrimination", subtitle: "One Human Family", body: "BSOAA Melbourne carries this legacy forward - welcoming all backgrounds, professions, and genders into a genuinely equal and inclusive community space.", accent: "#8B4513" },
+  { img: "/Iahtalinga_image.png", title: "Ishtalinga", subtitle: "Symbol of the Universe", body: "The personal symbol of the Universe, held close to the heart - a direct, equal connection between every devotee and the divine. No caste. No hierarchy.", accent: "#C94F0A" },
+  { img: "/social_equality.jpeg", title: "Social Equality", subtitle: "Unity in Diversity", body: "Basavanna's movement broke caste barriers 800 years before modern civil rights. Every person - regardless of birth - was equal in the Anubhava Mantapa.", accent: "#B8860B" },
+  { img: "/vachana_image.jpg", title: "Vachana Literature", subtitle: "Sacred Lyric Poetry", body: "Lyric prose-poems written by the Sharanas - one of the oldest literary forms in Kannada, speaking of justice, love, and inner divinity in plain, accessible language.", accent: "#8B4513" },
+  { img: "/anubhava_mantapa.jpg", title: "Anubhava Mantapa", subtitle: "World's First Parliament", body: "The world's first democratic spiritual assembly. Men and women of all backgrounds debated, shared wisdom, and governed together as equals in 12th-century Kalyana.", accent: "#C94F0A" },
+  { img: "/dasoha_image.jpg", title: "Dasoha", subtitle: "Selfless Service", body: "Selfless giving - of food, wealth, knowledge, and time. Every act of generosity is considered sacred. Dasoha is the living heartbeat of every BSOAA gathering.", accent: "#B8860B" },
+  { img: "/non_descrimination_image.jpg", title: "Non-Discrimination", subtitle: "One Human Family", body: "BSOAA Melbourne carries this legacy forward - welcoming all backgrounds, professions, and genders into a genuinely equal and inclusive community space.", accent: "#8B4513" },
 ];
 
 const events = [
-  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", fullImg: "/bsoaa_melbourne/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
-  { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/bsoaa_melbourne/deepavali_event.jpeg", fullImg: "/bsoaa_melbourne/deepavali_event.jpeg", rsvp: null },
-  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/bsoaa_melbourne/past_event-4.jpg", fullImg: "/bsoaa_melbourne/past_event-4.jpg", rsvp: null },
-  { date: "Ongoing", day: "Year-round", title: "Dasoha - Community Service", desc: "Volunteer-led service activities in Melbourne - food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/bsoaa_melbourne/past_event-5.jpg", fullImg: "/bsoaa_melbourne/past_event-5.jpg", rsvp: null },
+  { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/basava_jayanthi_2026.jpeg", fullImg: "/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
+  { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/deepavali_event.jpeg", fullImg: "/deepavali_event.jpeg", rsvp: null },
+  { date: "Monthly", day: "Last Sunday", title: "Mahamane Gathering", desc: "Monthly spiritual gathering - vachana singing, Sharana philosophy discussions, community bonding.", tag: "🙏 Monthly", img: "/past_event-4.jpg", fullImg: "/past_event-4.jpg", rsvp: null },
+  { date: "Ongoing", day: "Year-round", title: "Dasoha - Community Service", desc: "Volunteer-led service activities in Melbourne - food drives, cultural education, and neighbourhood outreach.", tag: "🤝 Service", img: "/past_event-5.jpg", fullImg: "/past_event-5.jpg", rsvp: null },
 ];
 
 const galleryImages = [
-  { file: "/bsoaa_melbourne/community_activity_image-1.jpg", caption: "Cultural Program - Group Dancing" },
-  { file: "/bsoaa_melbourne/community_activity_image-2.jpg", caption: "Lamp Lighting Ceremony" },
-  { file: "/bsoaa_melbourne/community_activity_image-3.jpg", caption: "Community Picnic" },
-  { file: "/bsoaa_melbourne/community_activity_image-4.jpg", caption: "Mahamane Gathering" },
-  { file: "/bsoaa_melbourne/community_activity_image-5.jpg", caption: "BSOAA Melbourne Team" },
-  { file: "/bsoaa_melbourne/community_activity_image-6.jpg", caption: "Monthly Gathering" },
-  { file: "/bsoaa_melbourne/community_activity_image-7.jpg", caption: "Cultural Event" },
-  { file: "/bsoaa_melbourne/community_activity_image-8.jpg", caption: "Dasoha - Community Cleanup" },
-  { file: "/bsoaa_melbourne/community_activity_image-9.jpg", caption: "Deepavali Celebration" },
-  { file: "/bsoaa_melbourne/community_activity_image-10.jpg", caption: "Deepavali Gathering" },
+  { file: "/community_activity_image-1.jpg", caption: "Cultural Program - Group Dancing" },
+  { file: "/community_activity_image-2.jpg", caption: "Lamp Lighting Ceremony" },
+  { file: "/community_activity_image-3.jpg", caption: "Community Picnic" },
+  { file: "/community_activity_image-4.jpg", caption: "Mahamane Gathering" },
+  { file: "/community_activity_image-5.jpg", caption: "BSOAA Melbourne Team" },
+  { file: "/community_activity_image-6.jpg", caption: "Monthly Gathering" },
+  { file: "/community_activity_image-7.jpg", caption: "Cultural Event" },
+  { file: "/community_activity_image-8.jpg", caption: "Dasoha - Community Cleanup" },
+  { file: "/community_activity_image-9.jpg", caption: "Deepavali Celebration" },
+  { file: "/community_activity_image-10.jpg", caption: "Deepavali Gathering" },
 
 ];
 
 const recognitionImages = [
-  // { file: "/bsoaa_melbourne/recognition_image-1.jpg", caption: "Global Recognition Ceremony" },
-  // { file: "/bsoaa_melbourne/recognition_image-2.jpg", caption: "Community Honours" },
-  // { file: "/bsoaa_melbourne/recognition_image-3.jpg", caption: "Leadership Commitment" },
-  { file: "/bsoaa_melbourne/recognition_image-4.jpg", caption: "PM Modi paying tribute to Basavanna" },
+  // { file: "/recognition_image-1.jpg", caption: "Global Recognition Ceremony" },
+  // { file: "/recognition_image-2.jpg", caption: "Community Honours" },
+  // { file: "/recognition_image-3.jpg", caption: "Leadership Commitment" },
+  { file: "/recognition_image-4.jpg", caption: "PM Modi paying tribute to Basavanna" },
 ];
 
 const purposes = [
@@ -71,14 +71,14 @@ const presidentMessages = [
     name: "Praveen Patil",
     year: "President 2026",
     // date: "April 14, 2025",
-    img: "/bsoaa_melbourne/Praveen_Patil_president_image.jpg",
+    img: "/Praveen_Patil_president_image.jpg",
     message: "Sharanu, I would like to take this opportunity to thank Basava Samithi of Australasia Inc. Melbourne chapter members for electing me as president. It is a great opportunity to serve as Melbourne chapter president and engage in Basava Samithi activities. I am grateful to all members, my family, and friends. Basava Samithi Melbourne chapter was established in 1999 and since then has been serving the community through monthly Sharana Sangama, Mahamane, Australia Day parade, Clean Up Australia Day, Basava Jayanthi and Deepavali celebrations. As president, I will ensure the organisation's objectives and goals are attained, work collaboratively with the Executive Committee, serve community needs honestly, and follow organisation guidelines.",
   },
   {
     name: "Nagaraj Navalgatti",
     year: "President 2026",
     // date: "2021",
-    img: "/bsoaa_melbourne/Jaya_Hunagund_president_image.jpg",
+    img: "/Jaya_Hunagund_president_image.jpg",
     message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. - Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
   },
 ];
@@ -206,7 +206,7 @@ function SharedFooter({ goTo }) {
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 36, marginBottom: 40 }} className="g3">
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <img src="/bsoaa_melbourne/basava_logo.png" alt="BSOAA" style={{ width: 42, height: 42, objectFit: "contain" }} />
+              <img src="/basava_logo.png" alt="BSOAA" style={{ width: 42, height: 42, objectFit: "contain" }} />
               <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".7rem", color: "#D4A017", letterSpacing: ".07em" }}>BSOAA Melbourne</div>
             </div>
             <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".8rem", color: "rgba(245,215,142,.5)", lineHeight: 1.8, maxWidth: 290 }}>A non-profit community established in the late 1990s, dedicated to spreading Sharana philosophy across Melbourne and Australasia.</p>
@@ -245,12 +245,12 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       {/* HERO */}
       <section id="home" style={{ minHeight: "100vh", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", paddingTop: 100 }}>
         <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-          <img className="kenImg" src="/bsoaa_melbourne/hero_picture.jpg" alt="Hero" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          <img className="kenImg" src="/hero_picture.jpg" alt="Hero" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(115deg,rgba(59,31,10,.92) 0%,rgba(93,58,30,.68) 55%,rgba(184,134,11,.38) 100%)" }} />
           <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 120, background: "linear-gradient(to bottom,transparent,#FDF6E3)" }} />
         </div>
         <div style={{ position: "absolute", right: "-6%", top: "50%", transform: "translateY(-50%)", opacity: .04, pointerEvents: "none" }}>
-          <img src="/bsoaa_melbourne/hero_section_background.png" alt="" style={{ width: 520, height: 520, objectFit: "contain" }} />
+          <img src="/hero_section_background.png" alt="" style={{ width: 520, height: 520, objectFit: "contain" }} />
         </div>
         <div style={{ position: "relative", zIndex: 2, padding: "60px clamp(20px,6vw,100px)", maxWidth: 820 }}>
           <div style={{ display: "inline-block", background: "rgba(212,160,23,.18)", border: "1px solid rgba(212,160,23,.45)", borderRadius: 20, padding: "5px 18px", marginBottom: 22, backdropFilter: "blur(6px)" }}>
@@ -288,7 +288,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       {/* PILLARS */}
       <div style={{ background: "linear-gradient(135deg,#3B1F0A,#6B2D0A)" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", maxWidth: 1100, margin: "0 auto" }} className="g3">
-          {[{ img: "/bsoaa_melbourne/kayaka_image_hero_section.jpg", t: "Kayaka", s: "Work is Divine - every honest labour is worship" }, { img: "/bsoaa_melbourne/dasoha_image_hero_section.jpg", t: "Dasoha", s: "Selfless service - give freely of time and wealth" }, { img: "/bsoaa_melbourne/prasada_image_hero_section.jpg", t: "Prasada", s: "Sacred sharing - the fruit of work offered to all" }].map(({ img, t, s }) => (
+          {[{ img: "/kayaka_image_hero_section.jpg", t: "Kayaka", s: "Work is Divine - every honest labour is worship" }, { img: "/dasoha_image_hero_section.jpg", t: "Dasoha", s: "Selfless service - give freely of time and wealth" }, { img: "/prasada_image_hero_section.jpg", t: "Prasada", s: "Sacred sharing - the fruit of work offered to all" }].map(({ img, t, s }) => (
             <div key={t} style={{ padding: "28px 20px", borderRight: "1px solid rgba(245,215,142,.1)", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
               <div style={{ width: 72, height: 72, borderRadius: "50%", overflow: "hidden", border: "2px solid rgba(212,160,23,.5)", boxShadow: "0 4px 16px rgba(0,0,0,.4)", flexShrink: 0 }}>
                 <img src={img} alt={t} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -309,10 +309,10 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 36, alignItems: "center" }} className="g2">
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, position: "relative" }}>
               {[
-                { f: "/bsoaa_melbourne/community_activity_image-4.jpg", span: false },
-                { f: "/bsoaa_melbourne/community_activity_image-5.jpg", span: false },
-                { f: "/bsoaa_melbourne/community_activity_image-6.jpg", span: false },
-                { f: "/bsoaa_melbourne/community_activity_image-3.jpg", span: false },
+                { f: "/community_activity_image-4.jpg", span: false },
+                { f: "/community_activity_image-5.jpg", span: false },
+                { f: "/community_activity_image-6.jpg", span: false },
+                { f: "/community_activity_image-3.jpg", span: false },
               ].map(({ f }, i) => (
                 <div key={f} className="zoom" style={{ borderRadius: i === 0 ? "12px 4px 4px 4px" : i === 1 ? "4px 12px 4px 4px" : i === 2 ? "4px 4px 4px 12px" : "4px 4px 12px 4px", overflow: "hidden", aspectRatio: "4/3", boxShadow: "0 6px 24px rgba(93,58,30,.14)" }}>
                   <img src={f} alt="Community" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -341,7 +341,7 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
       {/* VACHANAS */}
       <section style={{ padding: "56px clamp(16px,5vw,64px)", background: "linear-gradient(180deg,#3B1F0A,#5C2A08)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", opacity: .05, pointerEvents: "none" }}>
-          <img src="/bsoaa_melbourne/hero_section_background.png" alt="" style={{ width: 600 }} />
+          <img src="/hero_section_background.png" alt="" style={{ width: 600 }} />
         </div>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1, textAlign: "center" }}>
           <div style={{ fontFamily: "'Cinzel Decorative',serif", fontSize: ".7rem", letterSpacing: ".2em", color: "#D4A017", marginBottom: 12 }}>SACRED WORDS</div>
@@ -661,7 +661,7 @@ function MembershipPage({ goTo, presidentIdx, setPresidentIdx }) {
               <div style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.8rem", color: "#F5D78E", fontStyle: "italic", marginBottom: 10, lineHeight: 1.2 }}>Give Your Time</div>
               <div style={{ width: 36, height: 2, background: "#D4A017", marginBottom: 20 }} />
               <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".86rem", color: "rgba(245,215,142,.72)", lineHeight: 1.85, marginBottom: 22 }}>Dasoha - selfless service - is the beating heart of our philosophy. Volunteer for events, cultural programs, or community service. All backgrounds welcome. Just a willing heart.</p>
-              <img src="/bsoaa_melbourne/community_activity_image-8.jpg" alt="Dasoha" style={{ width: "100%", borderRadius: 8, height: 150, objectFit: "cover", display: "block", marginBottom: 22, opacity: .85 }} />
+              <img src="/community_activity_image-8.jpg" alt="Dasoha" style={{ width: "100%", borderRadius: 8, height: 150, objectFit: "cover", display: "block", marginBottom: 22, opacity: .85 }} />
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSeT0rWQXeEcbkHTDcqKKwN-DPOhyekbDBEZpdn5QUJP2apylQ/viewform" target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
                 <button className="btnOG" style={{ width: "100%" }}>Get Involved</button>
               </a>
@@ -716,7 +716,7 @@ function ContactPage({ goTo }) {
           <SH tag="Get In Touch" title="Contact Us" sub="We would love to hear from you - reach out anytime" />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, marginTop: 32, alignItems: "start" }} className="g2">
             <div>
-              <img src="/bsoaa_melbourne/community_activity_image-5.jpg" alt="Team" style={{ width: "100%", borderRadius: 10, height: 210, objectFit: "cover", display: "block", marginBottom: 28, boxShadow: "0 8px 32px rgba(93,58,30,.14)" }} />
+              <img src="/community_activity_image-5.jpg" alt="Team" style={{ width: "100%", borderRadius: 10, height: 210, objectFit: "cover", display: "block", marginBottom: 28, boxShadow: "0 8px 32px rgba(93,58,30,.14)" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
                 {[{ ic: "✉️", l: "General Enquiries", v: "contact.bsoamelbourne@gmail.com", h: "mailto:contact.bsoamelbourne@gmail.com" }, { ic: "📋", l: "Secretary", v: "secretary.bsoamelbourne@gmail.com", h: "mailto:secretary.bsoamelbourne@gmail.com" }, { ic: "📍", l: "Location", v: "Melbourne, Victoria, Australia", h: null }, { ic: "🌐", l: "Website", v: "bsoaamelbourne.org", h: "https://bsoaamelbourne.org" }].map(({ ic, l, v, h }) => (
                   <div key={l} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
@@ -809,12 +809,12 @@ function AboutPage({ goTo }) {
       {/* ── BASAVANNA FEATURE ── */}
       <section style={{ background: "linear-gradient(160deg,#3B1F0A,#7B3F10)", padding: "56px clamp(16px,5vw,64px)", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", right: -80, top: "50%", transform: "translateY(-50%)", opacity: .055, pointerEvents: "none" }}>
-          <img src="/bsoaa_melbourne/hero_section_background.png" alt="" style={{ width: 460 }} />
+          <img src="/hero_section_background.png" alt="" style={{ width: 460 }} />
         </div>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "260px 1fr", gap: 56, alignItems: "center" }} className="g2">
           <div className="bob">
             <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,.55)", border: "3px solid rgba(212,160,23,.35)" }}>
-              <img src="/bsoaa_melbourne/hero_picture.jpg" alt="Basavanna" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }} />
+              <img src="/hero_picture.jpg" alt="Basavanna" style={{ width: "100%", display: "block", objectFit: "cover", aspectRatio: "3/4" }} />
             </div>
           </div>
           <div style={{ position: "relative", zIndex: 1 }}>
@@ -889,7 +889,7 @@ function AboutPage({ goTo }) {
           <SH tag="Our People" title="Executive Committee" sub="The dedicated members who lead and serve the BSOAA Melbourne Chapter." />
           <div style={{ marginTop: 40, borderRadius: 16, overflow: "hidden", boxShadow: "0 12px 48px rgba(93,58,30,.18)", border: "3px solid rgba(212,160,23,.3)" }}>
             <img
-              src="/bsoaa_melbourne/basava_members_image.jpg"
+              src="/basava_members_image.jpg"
               alt="BSOAA Melbourne Executive Committee 2021–2022"
               style={{ width: "100%", display: "block" }}
             />
@@ -996,7 +996,7 @@ export default function App() {
             filter: "drop-shadow(0 4px 12px rgba(93,58,30,.45))",
           }}>
             <img
-              src="/bsoaa_melbourne/basava_logo.png"
+              src="/basava_logo.png"
               alt="BSOAA Logo"
               style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
             />
