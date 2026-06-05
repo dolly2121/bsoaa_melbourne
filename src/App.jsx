@@ -25,6 +25,12 @@ const philosophyCards = [
   { img: "/non_descrimination_image.jpg", title: "Non-Discrimination", subtitle: "One Human Family", body: "BSOAA Melbourne carries this legacy forward - welcoming all backgrounds, professions, and genders into a genuinely equal and inclusive community space.", accent: "#8B4513" },
 ];
 
+const featuredEvent = {
+  date: "14 Jun 2026", day: "Sunday", title: "Sharana Sangama 2026", 
+  desc: "Basava Samithi Melbourne Chapter warmly invites you and your family to attend Sharana Sangama featuring a special online session on Maths Magic and Motivational Speech about Basava Philosophy by Shri Basavaraj Umrani (Human Computer). Date: Sunday 14 June 2026, 3:00 PM – 6:00 PM AEST. Venue: 21 Electra Avenue, Ashwood VIC 3147. Online: meet.google.com/mkv-novx-yxv", 
+  tag: "⭐ Featured Event", img: "/sharana_sangama_2026-06-04.jpeg", fullImg: "/sharana_sangama_2026-06-04.jpeg", rsvp: null
+};
+
 const events = [
   { date: "25 Apr 2026", day: "Saturday", title: "Basava Jayanthi 2026", desc: "Annual celebration - cultural performances, vachana recitals, community feast. In the divine presence of His Holiness Dr. Mahanta Prabhu Swamiji. RSVP required by 19 April.", tag: "🎉 Major Festival", img: "/basava_jayanthi_2026.jpeg", fullImg: "/basava_jayanthi_2026.jpeg", rsvp: "https://forms.gle/XR4Pmb1tsS5aEJmc8" },
   { date: "Oct 2025", day: "Sunday", title: "Deepawali Festival", desc: "Free community Deepawali gathering with singing, dancing, Dandiya and much more. Food available to purchase. RSVP is a must.", tag: "🪔 Festival", img: "/deepavali_event.jpeg", fullImg: "/deepavali_event.jpeg", rsvp: null },
@@ -68,16 +74,8 @@ const purposes = [
 
 const presidentMessages = [
   {
-    name: "Praveen Patil",
-    year: "President 2026",
-    // date: "April 14, 2025",
-    img: "/Praveen_Patil_president_image.jpg",
-    message: "Sharanu, I would like to take this opportunity to thank Basava Samithi of Australasia Inc. Melbourne chapter members for electing me as president. It is a great opportunity to serve as Melbourne chapter president and engage in Basava Samithi activities. I am grateful to all members, my family, and friends. Basava Samithi Melbourne chapter was established in 1999 and since then has been serving the community through monthly Sharana Sangama, Mahamane, Australia Day parade, Clean Up Australia Day, Basava Jayanthi and Deepavali celebrations. As president, I will ensure the organisation's objectives and goals are attained, work collaboratively with the Executive Committee, serve community needs honestly, and follow organisation guidelines.",
-  },
-  {
     name: "Nagaraj Navalgatti",
     year: "President 2026",
-    // date: "2021",
     img: "/Jaya_Hunagund_president_image.jpg",
     message: "Sharanu, I would like to warmly welcome all members and supporters of Basava Samithi of Australasia Inc. - Melbourne Chapter. It is an honour and privilege to serve in the role of President. The Samithi has been serving the community for over 20 years in Melbourne. It offers a platform for people from all walks of life to come and share their wisdom, knowledge and experiences. In an effort to preserve and practice Sharana Philosophy, the Samithi organises monthly Sharana Sangama, Maneyalli Mahamane (home-based Sharana gatherings) and special events such as Diwali and Basava Jayanthi celebrations.",
   },
@@ -425,7 +423,6 @@ function HomePage({ goTo, taglineIdx, taglineFade, vachanaIdx, vachanaDir, purpo
 }
 
 function EventsPage({ goTo, setLightbox }) {
-  const [featured, ...rest] = events;
   return (
     <div style={{ paddingTop: 100, background: "#FDF6E3", minHeight: "100vh" }} className="pageIn">
       <div style={{ padding: "48px clamp(16px,5vw,64px)" }}>
@@ -435,8 +432,8 @@ function EventsPage({ goTo, setLightbox }) {
           {/* ── FEATURED (BIG) CARD ── */}
           <div className="evCard" style={{ background: "#fff", borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 40px rgba(93,58,30,.15)", marginTop: 36, display: "grid", gridTemplateColumns: "1fr 1fr" }} id="featuredEvCard">
             {/* Image side */}
-            <div className="zoom" style={{ position: "relative", minHeight: 380, cursor: "pointer", overflow: "hidden" }} onClick={() => setLightbox({ file: featured.fullImg, caption: featured.title })}>
-              <img src={featured.img} alt={featured.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
+            <div className="zoom" style={{ position: "relative", minHeight: 380, cursor: "pointer", overflow: "hidden" }} onClick={() => setLightbox({ file: featuredEvent.fullImg, caption: featuredEvent.title })}>
+              <img src={featuredEvent.img} alt={featuredEvent.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }} />
               {/* Featured badge */}
               <div style={{ position: "absolute", top: 18, left: 18, background: "linear-gradient(135deg,#E8671A,#C94F0A)", color: "#fff", padding: "5px 14px", borderRadius: 20, fontFamily: "Lato,sans-serif", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", boxShadow: "0 4px 12px rgba(232,103,26,.4)" }}>
                 ⭐ Featured Event
@@ -450,23 +447,23 @@ function EventsPage({ goTo, setLightbox }) {
             {/* Content side */}
             <div style={{ padding: "40px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12, flexWrap: "wrap", gap: 8 }}>
-                <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", fontWeight: 700, color: "#E8671A", letterSpacing: ".1em", textTransform: "uppercase" }}>{featured.tag}</span>
-                <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#8B6914", fontStyle: "italic" }}>{featured.date} · {featured.day}</span>
+                <span style={{ fontFamily: "Lato,sans-serif", fontSize: ".72rem", fontWeight: 700, color: "#E8671A", letterSpacing: ".1em", textTransform: "uppercase" }}>{featuredEvent.tag}</span>
+                <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1rem", color: "#8B6914", fontStyle: "italic" }}>{featuredEvent.date} · {featuredEvent.day}</span>
               </div>
-              <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.6rem,2.8vw,2.2rem)", color: "#3B1F0A", fontWeight: 600, lineHeight: 1.2, marginBottom: 12 }}>{featured.title}</h2>
+              <h2 style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "clamp(1.6rem,2.8vw,2.2rem)", color: "#3B1F0A", fontWeight: 600, lineHeight: 1.2, marginBottom: 12 }}>{featuredEvent.title}</h2>
               <div style={{ width: 44, height: 3, background: "linear-gradient(90deg,#E8671A,#D4A017)", borderRadius: 2, marginBottom: 18 }} />
-              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".9rem", color: "#8B6914", lineHeight: 1.85, marginBottom: 28, flexGrow: 1 }}>{featured.desc}</p>
+              <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".9rem", color: "#8B6914", lineHeight: 1.85, marginBottom: 28, flexGrow: 1 }}>{featuredEvent.desc}</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                {featured.rsvp && <a href={featured.rsvp} target="_blank" rel="noreferrer"><button className="btnS">RSVP Now</button></a>}
-                <button className="btnO" onClick={() => setLightbox({ file: featured.fullImg, caption: featured.title })}>View Invitation</button>
+                {featuredEvent.rsvp && <a href={featuredEvent.rsvp} target="_blank" rel="noreferrer"><button className="btnS">RSVP Now</button></a>}
+                <button className="btnO" onClick={() => setLightbox({ file: featuredEvent.fullImg, caption: featuredEvent.title })}>View Invitation</button>
               </div>
             </div>
           </div>
           <style>{`@media(max-width:768px){#featuredEvCard{grid-template-columns:1fr!important;}#featuredEvCard>div:first-child{min-height:240px!important;}}`}</style>
 
-          {/* ── 3 SMALLER CARDS IN A ROW ── */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginTop: 20 }} className="g3">
-            {rest.map(ev => (
+          {/* ── 4 SMALLER CARDS IN A ROW ── */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, marginTop: 20 }} className="g4">
+            {events.map(ev => (
               <div key={ev.title} className="evCard" style={{ background: "#fff", borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 20px rgba(93,58,30,.1)", display: "flex", flexDirection: "column" }}>
                 {/* Image */}
                 <div className="zoom" style={{ height: 180, overflow: "hidden", position: "relative", cursor: "pointer", flexShrink: 0 }} onClick={() => setLightbox({ file: ev.fullImg, caption: ev.title })}>
