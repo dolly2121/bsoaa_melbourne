@@ -26,8 +26,9 @@ const philosophyCards = [
 ];
 
 const featuredEvent = {
-  date: "14 Jun 2026", day: "Sunday", title: "Sharana Sangama 2026", 
-  desc: "Basava Samithi Melbourne Chapter warmly invites you and your family to attend Sharana Sangama featuring a special online session on Maths Magic and Motivational Speech about Basava Philosophy by Shri Basavaraj Umrani (Human Computer). Date: Sunday 14 June 2026, 3:00 PM – 6:00 PM AEST. Venue: 21 Electra Avenue, Ashwood VIC 3147. Online: meet.google.com/mkv-novx-yxv", 
+  date: "14 Jun 2026", day: "Sunday", title: "Sharana Sangama 2026",
+  desc: "Basava Samithi Melbourne Chapter warmly invites you and your family to attend Sharana Sangama featuring a special online session on Maths Magic and Motivational Speech about Basava Philosophy by Shri Basavaraj Umrani (Human Computer). Date: Sunday 14 June 2026, 3:00 PM – 6:00 PM AEST. Venue: 21 Electra Avenue, Ashwood VIC 3147.",
+  joinLink: "https://meet.google.com/mkv-novx-yxv",
   tag: "⭐ Featured Event", img: "/sharana_sangama_2026-06-04.jpeg", fullImg: "/sharana_sangama_2026-06-04.jpeg", rsvp: null
 };
 
@@ -455,6 +456,7 @@ function EventsPage({ goTo, setLightbox }) {
               <p style={{ fontFamily: "Lato,sans-serif", fontSize: ".9rem", color: "#8B6914", lineHeight: 1.85, marginBottom: 28, flexGrow: 1 }}>{featuredEvent.desc}</p>
               <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                 {featuredEvent.rsvp && <a href={featuredEvent.rsvp} target="_blank" rel="noreferrer"><button className="btnS">RSVP Now</button></a>}
+                <a href={featuredEvent.joinLink} target="_blank" rel="noreferrer"><button className="btnS">Join Online</button></a>
                 <button className="btnO" onClick={() => setLightbox({ file: featuredEvent.fullImg, caption: featuredEvent.title })}>View Invitation</button>
               </div>
             </div>
